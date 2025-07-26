@@ -1,4 +1,4 @@
-# Blasio Ochieng Odhiambo - Portfolio Website
+# Blasio  Odhiambo - Portfolio Website
 
 ## 📌 Overview
 This is a personal portfolio website designed and built using **HTML** and **CSS**. It showcases my background, interests, education, and web development projects as an aspiring developer.
