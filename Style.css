@@ -1,0 +1,124 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #1A1A1A;
+    color: #fff;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #2A2A2A;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    transition: transform 0.1s ease;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+section {
+    background-color: #2A2A2A;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.1s ease;
+    border: 2px solid #00C4FF;
+}
+
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+h2 {
+    color: #00C4FF;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: color 0.1s ease;
+}
+
+h2:hover {
+    color: #00FFCC;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+li {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.project {
+    margin-top: 10px;
+}
+
+a {
+    color: #00C4FF;
+    text-decoration: none;
+    transition: color 0.1s ease;
+}
+
+a:hover {
+    color: #00FFCC;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    color: #777;
+    font-size: 0.9em;
+}
+header {
+    background-color: #2A2A2A;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    transition: transform 0.1s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+header nav {
+    display: inline-block;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Roboto', Arial, sans-serif;
+    color: #00C4FF; /* Changed to match section headers */
+    text-shadow: 
+        2px 2px 0 #0088CC, /* Darker cyan for base shadow */
+        4px 4px 2px rgba(0, 136, 204, 0.7), /* Deeper shadow with slight blur */
+        6px 6px 4px rgba(0, 136, 204, 0.5), /* Further 3D layer */
+        8px 8px 6px rgba(0, 136, 204, 0.3); /* Outermost layer for 3D effect */
+}
