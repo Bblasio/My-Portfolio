@@ -1,8 +1,8 @@
 # **Blasio  Odhiambo - Portfolio Website**
 
 ## 📌 **Overview**
-This is a personal portfolio website designed and built using **HTML** and **CSS** only. It showcases my background, interests, education, and web development projects as an aspiring developer.
-🌐 [View Live Portfolio]
+This is a personal portfolio website designed and built using **HTML** and **CSS** only. It showcases my background, interests, education, and my projects as an aspiring developer.
+🌐 [View Live Portfolio] : https://bblasio.github.io/My-Portfolio/
 
 ## 👨‍💻 **About Me**
 Hi, my name is **Blasio Ochieng Odhiambo**. **IT Profesional** with strong background in **Cyber security**, **Cloud computing**, **system administator** and **IT support**. I have a strong interest in **Web Development**, and I’m passionate about building functional and secure websites.
