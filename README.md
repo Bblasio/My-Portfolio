@@ -1,21 +1,22 @@
 # Blasio  Odhiambo - Portfolio Website
 
 ## 📌 Overview
-This is a personal portfolio website designed and built using **HTML** and **CSS**. It showcases my background, interests, education, and web development projects as an aspiring developer.
+This is a personal portfolio website designed and built using **HTML** and **CSS** only. It showcases my background, interests, education, and web development projects as an aspiring developer.
 
 ## 👨‍💻 About Me
-Hi, my name is **Blasio Ochieng Odhiambo**. I am a recent graduate in Information Technology from the **University of Eldoret**, currently pursuing online training in **Software Development**. I have a strong interest in **Web Development**, and I’m passionate about building functional and secure websites.
+Hi, my name is **Blasio Ochieng Odhiambo**. IT Profesional with strong background in Cyber security, Cloud computing,system administator and IT supportI.  have a strong interest in **Web Development**, and I’m passionate about building functional and secure websites.
 
 ## 📚 Education & Training
 - Bachelor’s Degree in Information Technology
 - Ongoing training in Software Development (Online Program)
-- Completed several cybersecurity and cloud-related certifications
+- Industry recogonized certifications
 
 ## 💡 Interests
 - AI and Machine Learning
 - Cybersecurity
 - Web Development
 - Tech Innovation
+- Personal development
 
 ## 📂 Projects
 
