@@ -1,99 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <title>Blasio's Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <header>
         <nav>
-            <h1>My Portfolio</h1>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#languages">Skills</a>
+            <a href="#interests">Interests</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <main>
-       <section id="about">
-    <h2>About Me</h2>
-    <div class="about-container">
-                <p>Hi, my name is Blasio Ochieng Odhiambo. I am an aspiring web developer focused on building functional and secure websites that deliver excellent user experiences.</p>
+      <section id="home" class="page">
+    <div class="section-content">
+        <div class="home-layout">
+            <div class="text-content">
+                <p>Hello, my name is <strong>Blasio Odhiambo</strong></p>
+                <p>I am an aspiring web developer.</p>
+                <a href="#about" class="learn-more">Learn more about me →</a>
+            </div>
+            <div class="image-wrapper">
+                <img src="Resources/images/myphoto.jpeg.jpeg" alt="Blasio Odhiambo" class="profile-img">
+            </div>
+        </div>
     </div>
 </section>
 
 
-        <section id="education">
-    <h2>Educational Background</h2>
-    <p>I hold a Bachelor's degree in Information Technology from the University of Eldoret. Alongside my core studies, I have pursued online training programs in cybersecurity and cloud computing, and I am currently advancing my skills in software development. These programs have equipped me with practical knowledge in system security, cloud infrastructure, and web technologies. I have also earned several industry-recognized certifications, reflecting my dedication to continuous growth in the tech field.</p>
-    <p><a href="resources/resume.pdf" download>Download My Resume</a></p>
-</section>
-<section id="languages">
-  <h2>Programming Languages</h2>
-  <ul>
-    <li>
-      <strong>Python</strong> – Proficient<br>
-      Experienced in writing clean, efficient code for cybersecurity tasks, automation, and data analysis. Familiar with libraries like Pandas, Flask, and Scapy.
-    </li>
-    <li>
-      <strong>JavaScript (JS)</strong> – Familiar<br>
-      Used in front-end web development to create interactive elements and enhance user experience. Understand basic DOM manipulation and event handling.
-    </li>
-    <li>
-      <strong>Java</strong> – Familiar<br>
-      Gained foundational knowledge in object-oriented programming, data structures, and console-based applications through academic projects.
-    </li>
-  </ul>
+
+        <section id="about" class="page">
+    <div class="section-content">
+        <div class="text-content">
+            <h2>Get to know me</h2>
+            
+            <div class="about-container">
+                <p>Hello! My name is <strong>Blasio Ochieng Odhiambo</strong>, an IT professional with a strong foundation in cyber security, system administration and IT support. I am an aspiring web developer.</p>
+
+                <p>My background includes a Bachelor's degree in Information Technology from the University of Eldoret.</p>
+
+                <p>Currently, I am actively advancing my skills through online training programs and industry-recognized certifications.</p>
+
+                <p>Looking ahead, I aim to become a reliable cybersecurity expert and web developer who contributes to digital safety, innovation, and transformation both locally and globally. My focus is on staying current, staying curious, and using technology to create positive impact.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
 
 
-       <section id="interests">
-    <h2>Interests</h2>
-    <ul>
-        <li><strong>AI and Machine Learning:</strong> Fascinated by the ability of machines to learn from data and make intelligent decisions. Actively exploring how AI technologies can be integrated into real-world applications to solve complex problems.</li>
-
-        <li><strong>Cybersecurity:</strong> Deeply interested in securing digital systems and networks. Passionate about learning ethical hacking techniques, threat detection, and using tools like Kali Linux and Wireshark to protect data and infrastructure.</li>
-
-        <li><strong>Web Development:</strong> Committed to building clean, functional, and secure websites. Continuously improving skills in HTML, CSS, JavaScript, and responsive design to create user-friendly web experiences.</li>
-
-        <li><strong>Tech Innovation:</strong> Excited by emerging technologies and how they reshape the digital world. Keen on exploring innovative tech solutions that can drive efficiency, transformation, and impact across industries.</li>
-    </ul>
+       <section id="education" class="page">
+    <div class="section-content">
+        <div class="text-content">
+            <h2>Educational Background</h2>
+            <p>I hold a Bachelor's degree in <span class="highlight">Information Technology</span> from the <span class="highlight">University of Eldoret</span>. Alongside my core studies, I have pursued online training programs in cybersecurity and cloud computing, and I am currently advancing my skills in software development. These programs have equipped me with practical knowledge in system security, cloud infrastructure, and web technologies. I have also earned several industry-recognized certifications, reflecting my dedication to continuous growth in the tech field.</p>
+            <p><a href="resources/resume.pdf" download class="btn">Download My Resume</a></p>
+        </div>
+    </div>
 </section>
 
+        <section id="languages" class="page">
+    <div class="section-content">
+        <div class="text-content">
+            <h2>Programming Languages</h2>
+            <ul>
+                <li><strong>Python</strong> – Proficient</li>
+                <li><strong>JavaScript (JS)</strong> – Familiar</li>
+                <li><strong>Java</strong> – Familiar</li>
+            </ul>
+            <div class="familiarity-visualization">
+                <h3>Familiarity Levels</h3>
+                <div class="bar-container">
+                    <div class="bar-label">Python</div>
+                    <div class="bar">
+                        <div class="bar-fill python" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-label">JavaScript (JS)</div>
+                    <div class="bar">
+                        <div class="bar-fill javascript" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-label">Java</div>
+                    <div class="bar">
+                        <div class="bar-fill java" style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="interests" class="page">
+    <div class="section-content">
+        <div class="text-content">
+            <h2>Interests</h2>
+            <ul>
+                <li><strong>AI and Machine Learning</strong></li>
+                <li><strong>Cybersecurity</strong></li>
+                <li><strong>Web Development</strong></li>
+                <li><strong>Tech Innovation</strong></li>
+                <li><strong>Personal Development</strong></li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-      <section id="projects">
+        <section id="projects" class="page">
     <h2>Projects</h2>
-
-    <div class="project">
-        <h3>Leave Application App (Mobile)</h3>
-        <p>This mobile application streamlines the leave application process in organizations. It replaces traditional handwritten and message-based leave requests with a structured, digital platform. Employees can apply for leave, track their request status, and view past leave records. The app enhances communication, accountability, and efficiency between staff and management.</p>
-        <p><a href=https://github.com/Bblasio/KISUMULAWCOURTLEAVESYSTEM.git target="_blank">View Project on GitHub</a></p>
-    </div>
-
-    <div class="project">
-        <h3>Lula Farm Portfolio Website (Upcoming)</h3>
-        <p>This upcoming project will be developed as a final showcase after completing this software Engineering training program. The website will represent a fictional goat farming business and focus on building a clean, responsive, and professional portfolio . It will highlight core front-end skills and demonstrate an understanding of structured layouts and user-centered design. The project will be added to GitHub and included in this portfolio once complete.</p>
+    <div class="projects-grid">
+        <div class="project">
+            <img src="Resources/images/leave.jpg" alt="Leave Application App" class="project-img">
+            <h3>Leave Application App (Mobile)</h3>
+            <p>This mobile application streamlines the leave application process in organizations. It replaces traditional handwritten and message-based leave requests with a structured, digital platform. Employees can apply for leave, track their request status, and view past leave records. The app enhances communication, accountability, and efficiency between staff and management.</p>
+            <p><a href="https://github.com/Bblasio/KISUMULAWCOURTLEAVESYSTEM.git" target="_blank" class="btn">View Project on GitHub</a></p>
+        </div>
+        <div class="project">
+            <img src="Resources/images/Lula.jpeg" alt="Lula Farm Portfolio Website" class="project-img">
+            <h3>Lula Farm Portfolio Website (Upcoming)</h3>
+            <p>This upcoming project will be developed as a final showcase after completing this software Engineering training program. The website will represent goat farming business and focus on building a clean, responsive, and professional portfolio. The project will be added to GitHub and included in this portfolio once complete.</p>
+        </div>
     </div>
 </section>
 
-
-
-        <section id="contact">
-  <h2>Contact Me</h2>
-  <p><strong>Email:</strong> <a href="mailto:ochiengblasio@gmail.com">ochiengblasio@gmail.com</a></p>
-  <p><strong>Phone:</strong> +254703165843</p>
-  <p><strong>Location:</strong> Kisumu, Kenya</p>
-  <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/blasioodhiambo" target="_blank">linkedin.com/in/blasioodhiambo</a></p>
-  <p><strong>Credly:</strong> <a href="https://www.credly.com/users/blasio-odhiambo" target="_blank">credly.com/users/blasio-odhiambo</a></p>
-  <p><strong>GitHub:</strong> <a href="https://github.com/Bblasio" target="_blank">github.com/Blasioodhiambo</a></p>
+       <section id="contact" class="page">
+    <h2>Contact Me</h2>
+    <div class="contact-list">
+        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:ochiengblasio@gmail.com" class="link">ochiengblasio@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +254703165843</p>
+        <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Kisumu, Kenya</p>
+        <p><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/blasioodhiambo" target="_blank" class="link">linkedin.com/in/blasioodhiambo</a></p>
+        <p><i class="fas fa-certificate"></i> <strong>Credly:</strong> <a href="https://www.credly.com/users/blasio-odhiambo" target="_blank" class="link">credly.com/users/blasio-odhiambo</a></p>
+        <p><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/Bblasio" target="_blank" class="link">github.com/Blasioodhiambo</a></p>
+    </div>
 </section>
-
     </main>
 
     <footer>
         <p>&copy; 2025 Blasio Odhiambo. All rights reserved.</p>
     </footer>
 </body>
-
 </html>
