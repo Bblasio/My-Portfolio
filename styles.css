@@ -7,7 +7,7 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   color: #fff;
-  background-image: url('../assets/images/home_pic.jpg');
+  background-image: url('assets/images/home_pic.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -1156,7 +1156,7 @@ footer {
   text-align: center;
   padding: 100px 20px;
   min-height: 80vh;
-  background-image: url('../assets/images/home_pic.jpg');
+  background-image: url('assets/images/home_pic.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
