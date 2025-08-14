@@ -166,7 +166,6 @@ header {
   opacity: 1;
   transform: scale(1.1);
 }
-
 /* About Section */
 .about-main {
   background-color: #1a1a2e;
@@ -181,7 +180,8 @@ header {
   align-items: center;
   justify-content: center;
   gap: 100px;
-  margin-top: 0px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .profile-section {
@@ -233,6 +233,7 @@ header {
 
 .about-content {
   flex: 2 1 500px;
+  max-width: 100%;
 }
 
 .journey {
@@ -255,7 +256,8 @@ header {
   border-radius: 12px;
   border: 1px solid #444;
   margin-bottom: 20px;
-  width: 700px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .badges {
@@ -271,6 +273,26 @@ header {
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .about-layout {
+    gap: 30px;
+  }
+
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .about-content {
+    padding: 0 10px;
+  }
+
+  .myjourney {
+    padding: 15px;
+  }
 }
 
 /* Skills Section */
