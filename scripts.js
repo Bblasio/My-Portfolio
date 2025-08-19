@@ -1,4 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Theme Toggle Functionality
+  const themeSwitch = document.querySelector('#theme-switch');
+  if (themeSwitch) {
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.body.classList.toggle('dark-theme', savedTheme === 'dark');
+    themeSwitch.checked = savedTheme === 'dark';
+    themeSwitch.addEventListener('change', () => {
+      document.body.classList.toggle('dark-theme');
+      localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+      console.log('Theme toggled to:', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+    });
+  } else {
+    console.error('Theme switch input (#theme-switch) not found in the DOM');
+  }
+
   // Smooth Scrolling for Navigation
   const navLinks = document.querySelectorAll('.nav-links a');
   if (navLinks.length > 0) {
@@ -11,9 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
           targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
           navLinks.forEach(link => link.classList.remove('active'));
           this.classList.add('active');
+        } else {
+          console.warn(`Navigation target ${targetId} not found`);
         }
       });
     });
+  } else {
+    console.warn('No navigation links (.nav-links a) found');
   }
 
   // Mobile Hamburger Menu
@@ -23,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navLinksContainer.classList.toggle('active');
+      console.log('Hamburger menu toggled');
     });
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -30,24 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinksContainer.classList.remove('active');
       });
     });
-  }
-
-  // Work Experience and Skills Filtering
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  if (filterButtons.length > 0) {
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        const filter = button.dataset.filter;
-        document.querySelectorAll('.experience-card').forEach(card => {
-          card.style.display = filter === 'all' || card.dataset.category.includes(filter) ? 'block' : 'none';
-        });
-        document.querySelectorAll('.interest-card').forEach(card => {
-          card.style.display = filter === 'all' || card.dataset.category === filter ? 'block' : 'none';
-        });
-      });
-    });
+  } else {
+    console.warn('Hamburger menu (.hamburger) or nav links (.nav-links) not found');
   }
 
   // Contact Form Validation
@@ -55,45 +59,67 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
+      const name = document.getElementById('name')?.value.trim();
+      const email = document.getElementById('email')?.value.trim();
+      const message = document.getElementById('message')?.value.trim();
       const formMessage = document.getElementById('form-message');
       
-      if (!formMessage) return;
+      if (!formMessage) {
+        console.error('Form message element (#form-message) not found');
+        return;
+      }
       
-      if (name.length < 2) {
+      if (!name || name.length < 2) {
         formMessage.innerText = 'Please enter a valid name (2+ characters).';
         return;
       }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         formMessage.innerText = 'Please enter a valid email address.';
         return;
       }
-      if (message.length < 10) {
+      if (!message || message.length < 10) {
         formMessage.innerText = 'Message must be at least 10 characters.';
         return;
       }
       
       formMessage.innerText = 'Form validated! Ready to send (server-side pending).';
       contactForm.reset();
+      console.log('Form validated successfully');
     });
+  } else {
+    console.warn('Contact form (#contact-form) not found');
   }
 
-  // Scroll Animations for Cards
+  // Scroll Animations
   const observerOptions = {
     root: null,
     threshold: 0.1
   };
   const scrollObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        // For cards in Projects, Education, and Contact
+        if (entry.target.classList.contains('project-card') || 
+            entry.target.classList.contains('education-card') || 
+            entry.target.classList.contains('cert-card') || 
+            entry.target.classList.contains('contact-message') || 
+            entry.target.classList.contains('contact-info')) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 200); // Staggered delay for cards
+        } else {
+          // For section content
+          entry.target.classList.add('visible');
+        }
         observer.unobserve(entry.target);
       }
     });
   }, observerOptions);
-  document.querySelectorAll('.experience-card, .interest-card, .project-card, .education-card, .cert-card, .contact-box').forEach(card => {
-    scrollObserver.observe(card);
-  });
+
+  const elementsToAnimate = document.querySelectorAll('.animate-section, .project-card, .education-card, .cert-card, .contact-message.card, .contact-info.card');
+  if (elementsToAnimate.length > 0) {
+    elementsToAnimate.forEach(element => scrollObserver.observe(element));
+  } else {
+    console.warn('No elements found for scroll animations');
+  }
 });
