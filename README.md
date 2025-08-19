@@ -1,4 +1,4 @@
-# Welcome to My Portfolio! 🚀
+# Welcome to My Portfolio!
 
 Hi, I'm **Blasio Odhiambo**, an IT professional and aspiring cybersecurity analyst passionate about building secure, innovative tech solutions. This portfolio showcases my skills, projects, and journey in technology.
 
