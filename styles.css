@@ -1252,3 +1252,33 @@ footer {
     font-size: 2rem;
   }
 }
+/* Credly Section */
+.credly-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Matches cv-button alignment within cv-download */
+  margin-top: 0.5rem; /* Consistent with cv-button margin */
+}
+
+.credly-desc {
+  font-size: 1.1rem; /* Matches cv-title */
+  font-weight: 600; /* Matches cv-title */
+  color: var(--text-color); /* Matches cv-title */
+  margin: 0; /* Matches cv-title */
+  text-align: center;
+}
+
+.credly-button {
+  background: var(--btn-bg); /* Matches cv-button */
+  color: #fff; /* Matches cv-button */
+  padding: 0.6rem 1.2rem; /* Matches cv-button */
+  border-radius: 8px; /* Matches cv-button */
+  text-decoration: none; /* Matches cv-button */
+  font-weight: 600; /* Matches cv-button */
+  transition: transform 0.3s; /* Matches cv-button */
+  margin-top: 0.5rem; /* Matches cv-button */
+}
+
+.credly-button:hover {
+  transform: scale(1.05); /* Matches cv-button hover */
+}
