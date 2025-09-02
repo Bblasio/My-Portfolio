@@ -53,43 +53,75 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.warn('Hamburger menu (.hamburger) or nav links (.nav-links) not found');
   }
-
-  // Contact Form Validation
+  /* ----------------------------
+   📬 Contact Form (Validation + Send to Formspree)
+  ---------------------------- */
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
+ 
       const name = document.getElementById('name')?.value.trim();
       const email = document.getElementById('email')?.value.trim();
+      const subject = document.getElementById('subject')?.value.trim();
       const message = document.getElementById('message')?.value.trim();
       const formMessage = document.getElementById('form-message');
-      
+ 
       if (!formMessage) {
         console.error('Form message element (#form-message) not found');
         return;
       }
-      
+ 
+      formMessage.style.color = '#e63946'; // red by default
+ 
       if (!name || name.length < 2) {
-        formMessage.innerText = 'Please enter a valid name (2+ characters).';
+        formMessage.innerText = '⚠️ Please enter a valid name (2+ characters).';
         return;
       }
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        formMessage.innerText = 'Please enter a valid email address.';
+        formMessage.innerText = '⚠️ Please enter a valid email address.';
         return;
       }
       if (!message || message.length < 10) {
-        formMessage.innerText = 'Message must be at least 10 characters.';
+        formMessage.innerText = '⚠️ Message must be at least 10 characters.';
         return;
       }
-      
-      formMessage.innerText = 'Form validated! Ready to send (server-side pending).';
-      contactForm.reset();
-      console.log('Form validated successfully');
+ 
+      // prepare data for Formspree
+      const data = {
+        name,
+        email,
+        subject,
+        message
+      };
+ 
+      try {
+        const response = await fetch('https://formspree.io/f/mzzaaogg', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+ 
+        if (response.ok) {
+          formMessage.style.color = '#2a9d8f'; // green
+          formMessage.innerText = '✅ Thanks! Your message has been sent successfully.';
+          contactForm.reset();
+          console.log('Form submitted successfully to Formspree');
+        } else {
+          formMessage.innerText = '❌ Oops! Something went wrong. Please try again later.';
+          console.error('Form submission failed:', response.statusText);
+        }
+      } catch (error) {
+        formMessage.innerText = '❌ Network error. Please check your connection.';
+        console.error('Error submitting form:', error);
+      }
     });
   } else {
     console.warn('Contact form (#contact-form) not found');
   }
-
   // Scroll Animations
   const observerOptions = {
     root: null,
