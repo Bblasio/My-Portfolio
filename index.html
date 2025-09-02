@@ -317,25 +317,33 @@ I believe in the power of lifelong learning and self-development. Every day is a
   </section>
 
   <section id="contact" class="contact-section">
-    <h2>Get In <span class="highlight">Touch</span></h2>
-    <p class="subtitle">Ready to work together? Let's connect!</p>
-    <div class="line"></div>
-    <div class="contact-wrapper animate-section">
-      <div class="contact-message card">
-        <h3>Send me a message</h3>
-        <form id="contact-form">
-          <label>Name</label>
-          <input type="text" id="name" placeholder="Your full name">
-          <label>Email</label>
-          <input type="email" id="email" placeholder="your.email@example.com">
-          <label>Subject</label>
-          <input type="text" id="subject" placeholder="What's this about?">
-          <label>Message</label>
-          <textarea rows="4" id="message" placeholder="Tell me about your project or just say hello!"></textarea>
-          <button type="submit" style="background-color: #9b5de5; border: none; width:100%; color: white; border-radius: 6px;">Send Message</button>
-          <p id="form-message"></p>
-        </form>
-      </div>
+  <h2>Get In <span class="highlight">Touch</span></h2>
+  <p class="subtitle">Ready to work together? Let's connect!</p>
+  <div class="line"></div>
+  <div class="contact-wrapper animate-section">
+ 
+  <!-- Contact Form -->
+<div class="contact-message card">
+  <h3>Send me a message</h3>
+  <form id="contact-form" action="https://formspree.io/f/mzzaaogg" method="POST">
+    <label>Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required>
+    
+    <label>Email</label>
+    <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+    
+    <label>Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+    
+    <label>Message</label>
+    <textarea rows="4" id="message" name="message" placeholder="Tell me about your project or just say hello!" required></textarea>
+    
+    <button type="submit" style="background-color: #9b5de5; border: none; width:100%; color: white; border-radius: 6px;">
+      Send Message
+    </button>
+    <p id="form-message"></p>
+  </form>
+</div>
       <div class="contact-info card">
         <h3>Contact Information</h3>
         <div class="info-item">
