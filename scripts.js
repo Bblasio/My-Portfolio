@@ -1167,3 +1167,440 @@ if (typeof module !== 'undefined' && module.exports) {
     initArticleReadTime
   };
 }
+// typing-animations.js
+document.addEventListener('DOMContentLoaded', function() {
+  // Only run if hero section exists
+  if (document.querySelector('.hero-section')) {
+    initTypingAnimations();
+    initRoleRotation();
+  }
+});
+
+// Initialize Typing Animations
+function initTypingAnimations() {
+  // Animate the name "Blasio Odhiambo" with typing effect
+  const firstName = "Blasio";
+  const lastName = "Odhiambo";
+  const firstNameElement = document.querySelector('.title-name');
+  const lastNameElement = document.querySelector('.title-word:last-child');
+  
+  if (firstNameElement && lastNameElement) {
+    // Clear existing content
+    firstNameElement.innerHTML = '';
+    lastNameElement.innerHTML = '';
+    
+    // Type first name
+    typeText(firstNameElement, firstName, 0, 100, () => {
+      // Add slight pause
+      setTimeout(() => {
+        // Type last name
+        typeText(lastNameElement, lastName, 0, 100, () => {
+          // Start blinking cursor
+          startCursorBlink();
+          
+          // Start role rotation after name is fully typed
+          setTimeout(initRoleRotation, 1000);
+          
+          // Start name disappearing/retyping effect after delay
+          setTimeout(() => {
+            startNameCycle(firstNameElement, lastNameElement);
+          }, 3000);
+        });
+      }, 300);
+    });
+  }
+}
+
+// Type text with character-by-character animation
+function typeText(element, text, index, speed, callback) {
+  if (index < text.length) {
+    element.innerHTML += text.charAt(index);
+    
+    // Add typing sound effect (optional - uncomment to enable)
+    // playTypingSound();
+    
+    setTimeout(() => {
+      typeText(element, text, index + 1, speed, callback);
+    }, speed);
+  } else if (callback) {
+    callback();
+  }
+}
+
+// Start blinking cursor effect
+function startCursorBlink() {
+  const cursor = document.createElement('span');
+  cursor.className = 'typing-cursor';
+  cursor.innerHTML = '|';
+  cursor.style.cssText = `
+    display: inline-block;
+    color: var(--highlight-color);
+    font-weight: bold;
+    animation: blink 1s infinite;
+  `;
+  
+  // Add cursor to last name
+  const lastNameElement = document.querySelector('.title-word:last-child');
+  if (lastNameElement) {
+    lastNameElement.appendChild(cursor);
+  }
+  
+  // Add cursor blink animation CSS
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    .typing-cursor {
+      animation: blink 1s infinite;
+    }
+  `;
+  document.head.appendChild(style);
+}
+
+// Start name disappearing and retyping cycle
+function startNameCycle(firstNameElement, lastNameElement) {
+  const firstName = "Blasio";
+  const lastName = "Odhiambo";
+  
+  // Function to erase text
+  function eraseText(element, text, index, speed, callback) {
+    if (index >= 0) {
+      element.innerHTML = text.substring(0, index);
+      setTimeout(() => {
+        eraseText(element, text, index - 1, speed, callback);
+      }, speed / 2);
+    } else if (callback) {
+      setTimeout(callback, 500);
+    }
+  }
+  
+  // Function to retype text
+  function retypeText(element, text, speed, callback) {
+    typeText(element, text, 0, speed, callback);
+  }
+  
+  // Erase both names
+  eraseText(firstNameElement, firstName, firstName.length, 50, () => {
+    eraseText(lastNameElement, lastName, lastName.length, 50, () => {
+      // Wait, then retype with different speed
+      setTimeout(() => {
+        retypeText(firstNameElement, firstName, 80, () => {
+          setTimeout(() => {
+            retypeText(lastNameElement, lastName, 80, () => {
+              // Restart cycle after pause
+              setTimeout(() => {
+                startNameCycle(firstNameElement, lastNameElement);
+              }, 5000);
+            });
+          }, 300);
+        });
+      }, 1000);
+    });
+  });
+}
+
+// Initialize role rotation with typing effect
+function initRoleRotation() {
+  const roles = [
+    "IT Professional",
+    "Security Analyst", 
+    "Web Developer",
+    "Cloud Specialist",
+    "Cybersecurity Enthusiast"
+  ];
+  
+  const roleElement = document.querySelector('.role-tags');
+  if (!roleElement) return;
+  
+  let currentRoleIndex = 0;
+  const typingSpeed = 80;
+  const deletingSpeed = 40;
+  const pauseBetweenRoles = 2000;
+  
+  // Clear existing roles
+  roleElement.innerHTML = '';
+  
+  function rotateRoles() {
+    const currentRole = roles[currentRoleIndex];
+    
+    // Erase current text
+    function eraseRoleText(text, index) {
+      if (index >= 0) {
+        roleElement.innerHTML = `<span class="role-tag">${text.substring(0, index)}</span>`;
+        setTimeout(() => eraseRoleText(text, index - 1), deletingSpeed);
+      } else {
+        // Move to next role
+        currentRoleIndex = (currentRoleIndex + 1) % roles.length;
+        const nextRole = roles[currentRoleIndex];
+        
+        // Type new role
+        typeRoleText(nextRole, 0);
+      }
+    }
+    
+    // Type new role text
+    function typeRoleText(text, index) {
+      if (index < text.length) {
+        roleElement.innerHTML = `<span class="role-tag">${text.substring(0, index + 1)}</span>`;
+        
+        // Add highlight to certain roles
+        if (text === "Security Analyst" || text === "Cybersecurity Enthusiast") {
+          roleElement.innerHTML = `<span class="role-tag highlight-text">${text.substring(0, index + 1)}</span>`;
+        }
+        
+        // Add typing sound effect (optional)
+        // if (index % 2 === 0) playTypingSound();
+        
+        setTimeout(() => typeRoleText(text, index + 1), typingSpeed);
+      } else {
+        // Pause before erasing
+        setTimeout(() => eraseRoleText(text, text.length), pauseBetweenRoles);
+      }
+    }
+    
+    // Start typing current role
+    typeRoleText(currentRole, 0);
+  }
+  
+  // Start rotation
+  rotateRoles();
+}
+
+// Optional: Typing sound effect
+function playTypingSound() {
+  // Create a simple typing sound using Web Audio API
+  try {
+    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    oscillator.frequency.value = 800;
+    oscillator.type = 'sine';
+    
+    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+    
+    oscillator.start(audioContext.currentTime);
+    oscillator.stop(audioContext.currentTime + 0.1);
+  } catch (e) {
+    console.log('Audio context not supported');
+  }
+}
+
+// Add CSS for typing animations
+const typingStyles = document.createElement('style');
+typingStyles.textContent = `
+  /* Typing animation styles */
+  .title-name, .title-word:last-child {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Blinking cursor */
+  .typing-cursor {
+    display: inline-block;
+    color: var(--highlight-color);
+    font-weight: bold;
+    animation: blink 1s infinite;
+    margin-left: 2px;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  /* Role rotation container */
+  .role-container {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .role-tags {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  
+  .role-tag {
+    display: inline-block;
+    background: rgba(155, 93, 229, 0.1);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    border: 2px solid rgba(155, 93, 229, 0.2);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .role-tag.highlight-text {
+    background: rgba(155, 93, 229, 0.2);
+    border-color: var(--highlight-color);
+    color: var(--highlight-color);
+  }
+  
+  /* Glitch effect for name */
+  .glitch-effect {
+    position: relative;
+    animation: glitch 3s infinite;
+  }
+  
+  .glitch-effect::before,
+  .glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .glitch-effect::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--highlight-color);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+  }
+  
+  .glitch-effect::after {
+    left: -2px;
+    text-shadow: -2px 0 #00f5d4;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+  }
+  
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+  }
+  
+  @keyframes glitch-anim {
+    0% { clip: rect(31px, 9999px, 94px, 0); }
+    5% { clip: rect(112px, 9999px, 76px, 0); }
+    10% { clip: rect(42px, 9999px, 78px, 0); }
+    15% { clip: rect(15px, 9999px, 35px, 0); }
+    20% { clip: rect(14px, 9999px, 13px, 0); }
+    25% { clip: rect(65px, 9999px, 57px, 0); }
+    30% { clip: rect(76px, 9999px, 152px, 0); }
+    35% { clip: rect(90px, 9999px, 10px, 0); }
+    40% { clip: rect(87px, 9999px, 94px, 0); }
+    45% { clip: rect(34px, 9999px, 150px, 0); }
+    50% { clip: rect(121px, 9999px, 99px, 0); }
+    55% { clip: rect(119px, 9999px, 58px, 0); }
+    60% { clip: rect(38px, 9999px, 92px, 0); }
+    65% { clip: rect(19px, 9999px, 84px, 0); }
+    70% { clip: rect(26px, 9999px, 42px, 0); }
+    75% { clip: rect(90px, 9999px, 91px, 0); }
+    80% { clip: rect(105px, 9999px, 79px, 0); }
+    85% { clip: rect(15px, 9999px, 19px, 0); }
+    90% { clip: rect(46px, 9999px, 33px, 0); }
+    95% { clip: rect(16px, 9999px, 16px, 0); }
+    100% { clip: rect(71px, 9999px, 132px, 0); }
+  }
+  
+  @keyframes glitch-anim2 {
+    0% { clip: rect(129px, 9999px, 36px, 0); }
+    5% { clip: rect(36px, 9999px, 4px, 0); }
+    10% { clip: rect(85px, 9999px, 4px, 0); }
+    15% { clip: rect(91px, 9999px, 29px, 0); }
+    20% { clip: rect(148px, 9999px, 54px, 0); }
+    25% { clip: rect(121px, 9999px, 149px, 0); }
+    30% { clip: rect(144px, 9999px, 142px, 0); }
+    35% { clip: rect(17px, 9999px, 79px, 0); }
+    40% { clip: rect(55px, 9999px, 57px, 0); }
+    45% { clip: rect(23px, 9999px, 38px, 0); }
+    50% { clip: rect(72px, 9999px, 11px, 0); }
+    55% { clip: rect(107px, 9999px, 118px, 0); }
+    60% { clip: rect(129px, 9999px, 90px, 0); }
+    65% { clip: rect(36px, 9999px, 14px, 0); }
+    70% { clip: rect(90px, 9999px, 120px, 0); }
+    75% { clip: rect(86px, 9999px, 68px, 0); }
+    80% { clip: rect(15px, 9999px, 15px, 0); }
+    85% { clip: rect(19px, 9999px, 65px, 0); }
+    90% { clip: rect(103px, 9999px, 41px, 0); }
+    95% { clip: rect(146px, 9999px, 147px, 0); }
+    100% { clip: rect(133px, 9999px, 59px, 0); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .role-tags {
+      font-size: 1.1rem;
+    }
+    
+    .role-tag {
+      padding: 0.4rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .role-tags {
+      font-size: 1rem;
+    }
+    
+    .role-container {
+      min-height: 50px;
+    }
+  }
+`;
+document.head.appendChild(typingStyles);
+
+// Optional: Add glitch effect to name
+function addGlitchEffect() {
+  const firstNameElement = document.querySelector('.title-name');
+  const lastNameElement = document.querySelector('.title-word:last-child');
+  
+  if (firstNameElement && lastNameElement) {
+    // Add glitch effect periodically
+    setInterval(() => {
+      if (Math.random() > 0.7) { // 30% chance to glitch
+        firstNameElement.classList.add('glitch-effect');
+        lastNameElement.classList.add('glitch-effect');
+        
+        setTimeout(() => {
+          firstNameElement.classList.remove('glitch-effect');
+          lastNameElement.classList.remove('glitch-effect');
+        }, 300);
+      }
+    }, 5000);
+  }
+}
+
+// Initialize everything
+window.addEventListener('load', function() {
+  // Start glitch effect after initial typing
+  setTimeout(addGlitchEffect, 5000);
+  
+  // Add hover effect to roles
+  const roleContainer = document.querySelector('.role-container');
+  if (roleContainer) {
+    roleContainer.addEventListener('mouseenter', function() {
+      // Pause rotation temporarily
+      this.style.animationPlayState = 'paused';
+    });
+    
+    roleContainer.addEventListener('mouseleave', function() {
+      // Resume rotation
+      this.style.animationPlayState = 'running';
+    });
+  }
+});
+
+// Export functions if using modules
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    initTypingAnimations,
+    initRoleRotation,
+    typeText,
+    startCursorBlink
+  };
+}
