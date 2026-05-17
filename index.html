@@ -3,1194 +3,1088 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Blasio Odhiambo</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <meta name="description" content="Blasio Odhiambo – IT Professional specializing in Cybersecurity, Cloud Computing, and AI Integration." />
+  <title>Blasio Odhiambo | IT Professional</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
-  <header>
-    <div class="theme-toggle">
-      <label class="theme-switch">
-        <input type="checkbox" id="theme-switch">
-        <span class="slider"></span>
-      </label>
-    </div>
-    <div class="nav-container">
-      <h1 class="logo"><span class="highlight">Portfolio</span></h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#why-me">Why Me</a></li>
-          <li><a href="#experience-section">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#interests">Interests</a></li>
-          <li><a href="#contact">Contact</a></li>
+
+  <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+  <header id="main-header">
+    <div class="header-inner">
+      <a href="#home" class="logo" aria-label="Blasio Odhiambo Home">
+        <span class="logo-bracket">[</span>
+        <span class="logo-name">B.Odhiambo</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#home"       class="nav-link active">Home</a></li>
+          <li><a href="#about"      class="nav-link">About</a></li>
+          <li><a href="#why-me"     class="nav-link">Why Me</a></li>
+          <li><a href="#skills"     class="nav-link">Skills</a></li>
+          <li><a href="#education"  class="nav-link">Education</a></li>
+          <li><a href="#projects"   class="nav-link">Projects</a></li>
+          <li><a href="#interests"  class="nav-link">Interests</a></li>
+          <li><a href="#contact"    class="nav-link nav-cta">Contact</a></li>
         </ul>
       </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
-<section id="home" class="hero-section">
-  <!-- ... existing background elements ... -->
-  
-  <div class="hero-container">
-    <div class="hero-left">
-      <div class="title-container">
-        <div class="greeting-text">
-          <span class="greeting-word">Hello</span>
-          <span class="greeting-comma">,</span>
-        </div>
-        
-        <h1 class="main-title">
-          <span class="title-line">
-            <span class="title-word">I'm Blasio Odhiambo</span>
-            <span class="title-name highlight">
-              <!-- Empty for typing animation -->
-            </span>
-          </span>
-          <span class="title-line">
-            <span class="last-name">
-              <!-- Empty for typing animation -->
-            </span>
-          </span>
-        </h1>
-        
-        <div class="role-container">
-          <div class="role-tags">
-            <!-- Will be populated by JavaScript -->
-          </div>
+
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <section id="home" class="hero-section">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for opportunities
+      </div>
+
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">
+        Blasio<br />
+        <span class="name-accent">Odhiambo</span>
+      </h1>
+
+      <div class="hero-roles">
+        <span class="role-static">I specialize in</span>
+        <div class="roles-ticker">
+          <span class="tick-item">Cybersecurity</span>
+          <span class="tick-item">Cloud Computing</span>
+          <span class="tick-item">IT Infrastructure</span>
+          <span class="tick-item">AI Integration</span>
+          <span class="tick-item">Solution Architecture</span>
         </div>
       </div>
-      
-     
-        
-              
-        <!-- Primary CTA -->
-        <div class="hero-cta">
-          <a href="#about" class="cta-button learn-more">
-            <span class="button-text">Learn More</span>
-            <span class="button-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </span>
-          </a>
-          
-          <div class="quick-links">
-            <a href="#projects" class="quick-link">
-              <span class="link-icon">🚀</span>
-              <span class="link-text">View Work</span>
-            </a>
-            <a href="#contact" class="quick-link">
-              <span class="link-icon">📧</span>
-              <span class="link-text">Contact</span>
-            </a>
-          </div>
-        </div>
+
+      <p class="hero-tagline">
+        Building secure, scalable, and intelligent systems that bridge<br class="d-none-sm" />
+        technical infrastructure with real business value.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-rocket"></i> View My Work
+        </a>
+        <a href="#contact" class="btn btn-ghost">
+          Let's Connect <i class="fas fa-arrow-right"></i>
+        </a>
       </div>
-      
-      <!-- Right Column - Visual Elements -->
-      <div class="hero-right">
-        <div class="visual-container">
-          <!-- Animated Tech Icons -->
-          <div class="tech-icons">
-            <div class="tech-icon" data-icon="🔒">
-              <span class="icon-tooltip">Security</span>
-            </div>
-            <div class="tech-icon" data-icon="☁️">
-              <span class="icon-tooltip">Cloud</span>
-            </div>
-            <div class="tech-icon" data-icon="🤖">
-              <span class="icon-tooltip">AI</span>
-            </div>
-            <div class="tech-icon" data-icon="💻">
-              <span class="icon-tooltip">Web Development</span>
-            </div>
-          </div>
-          
-          <!-- Animated Lottie Background -->
-          <div class="lottie-bg">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_fcfjwiyb.json"
-              background="transparent"
-              speed="0.5"
-              style="width: 400px; height: 400px;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>        
+
+      <div class="hero-stats">
+        <div class="hstat">
+          <strong>20+</strong>
+          <span>Projects</span>
+        </div>
+        <div class="hstat-divider"></div>
+        <div class="hstat">
+          <strong>3+</strong>
+          <span>Years Exp.</span>
+        </div>
+        <div class="hstat-divider"></div>
+        <div class="hstat">
+          <strong>50+</strong>
+          <span>Technologies</span>
         </div>
       </div>
     </div>
-    
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <div class="scroll-text">Scroll to explore</div>
-      <div class="scroll-line">
-        <div class="scroll-dot"></div>
+
+    <div class="hero-visual">
+      <div class="hex-grid">
+        <div class="hex" data-label="Security"><i class="fas fa-shield-halved"></i></div>
+        <div class="hex" data-label="Cloud"><i class="fas fa-cloud"></i></div>
+        <div class="hex" data-label="AI"><i class="fas fa-brain"></i></div>
+        <div class="hex" data-label="Web Dev"><i class="fas fa-code"></i></div>
+        <div class="hex" data-label="Network"><i class="fas fa-network-wired"></i></div>
+        <div class="hex" data-label="Data"><i class="fas fa-database"></i></div>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">
+      <span class="scroll-label">Scroll</span>
+      <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+    </a>
+  </section>
+
+  <!-- ═══════════════════════════ ABOUT ═══════════════════════════ -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01 / About</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+        <div class="title-bar"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Profile Card -->
+        <div class="profile-side">
+          <div class="profile-frame">
+            <div class="profile-img-wrap">
+              <img src="assets/images/picture.jpg" alt="Photo of Blasio Odhiambo" class="profile-img" loading="lazy" />
+              <div class="profile-ring"></div>
+              <div class="profile-glow"></div>
+            </div>
+            <div class="profile-label">
+              <span class="label-dot"></span>
+              IT Professional
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="contact-row">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:odhisblasio@gmail.com">odhisblasio@gmail.com</a>
+            </div>
+            <div class="contact-row">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+254703165843">+254 703 165 843</a>
+            </div>
+            <div class="contact-row">
+              <i class="fas fa-location-dot"></i>
+              <span>Nairobi, Kenya</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bio Side -->
+        <div class="bio-side">
+          <p class="bio-lead">
+            I'm a passionate IT professional specializing in
+            <span class="accent">cybersecurity</span> and
+            <span class="accent">system reliability</span>, with hands-on experience
+            bridging technical infrastructure and business objectives.
+          </p>
+
+          <div class="pillars">
+            <div class="pillar">
+              <div class="pillar-icon"><i class="fas fa-shield-halved"></i></div>
+              <div>
+                <h4>Security-First Mindset</h4>
+                <p>Proactive threat mitigation and secure-by-design architecture across every layer of a system.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon"><i class="fas fa-wrench"></i></div>
+              <div>
+                <h4>Problem Solver</h4>
+                <p>Excel at diagnosing complex technical issues and implementing efficient, scalable solutions.</p>
+              </div>
+            </div>
+            <div class="pillar">
+              <div class="pillar-icon"><i class="fas fa-bolt"></i></div>
+              <div>
+                <h4>Continuous Innovator</h4>
+                <p>Driven by emerging technologies and always seeking better ways to optimize systems and workflows.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="expertise-row">
+            <span class="etag"><i class="fas fa-lock"></i> Cybersecurity</span>
+            <span class="etag"><i class="fas fa-server"></i> IT Infrastructure</span>
+            <span class="etag"><i class="fas fa-cloud"></i> Cloud Systems</span>
+            <span class="etag"><i class="fas fa-brain"></i> AI Integration</span>
+            <span class="etag"><i class="fas fa-network-wired"></i> Network Security</span>
+            <span class="etag"><i class="fas fa-chart-line"></i> System Optimization</span>
+          </div>
+
+          <div class="bio-actions">
+            <a href="#projects" class="btn btn-primary btn-sm">
+              <i class="fas fa-folder-open"></i> View Work
+            </a>
+            <a href="assets/cv/Blasio_odhiambo CV.pdf" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-file-pdf"></i> Download CV
+            </a>
+            <a href="https://www.credly.com/users/blasio-odhiambo" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-medal"></i> View Badges
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-<section id="about" class="about-section">
-  <div class="about-container">
-    <!-- Section Header -->
-    <div class="about-header">
-      <h2 class="section-main-title">About <span class="highlight">Me</span></h2>
-      <p class="section-subtitle">Get to know me</p>
-      <div class="section-divider"></div>
+
+  <!-- ═══════════════════════════ WHY ME ═══════════════════════════ -->
+  <section id="why-me" class="section why-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">02 / Why Me</span>
+        <h2 class="section-title">Why Work <span class="accent">With Me</span></h2>
+        <div class="title-bar"></div>
+        <p class="section-sub">A combination of technical skills, adaptability, and continuous growth</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon-wrap"><i class="fas fa-lightbulb"></i></div>
+          <h3>Problem Solving</h3>
+          <p>Building practical solutions for real-world technical challenges using modern technologies and creative thinking.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-wrap"><i class="fas fa-arrows-spin"></i></div>
+          <h3>Adaptability</h3>
+          <p>Comfortable in diverse environments, learning new tools and technologies rapidly without losing momentum.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-wrap"><i class="fas fa-people-group"></i></div>
+          <h3>Team Collaboration</h3>
+          <p>Works well within teams, communicates clearly, and contributes positively toward shared goals and outcomes.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
+          <h3>Continuous Learning</h3>
+          <p>Passionate about improving technical skills and staying current with modern industry trends and emerging tech.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-wrap"><i class="fas fa-shield-halved"></i></div>
+          <h3>Security Awareness</h3>
+          <p>Deep understanding of secure systems, data protection, and maintaining reliable technology practices at all layers.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon-wrap"><i class="fas fa-diagram-project"></i></div>
+          <h3>Project Experience</h3>
+          <p>Built and delivered practical projects spanning web development, system integration, AI tools, and IT support.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- About Content -->
-    <div class="about-content animate-section">
-      <!-- Profile Area -->
-      <div class="profile-area">
-        <div class="profile-card">
-          <!-- Modern Frameless Image -->
-          <div class="profile-image-container">
-            <div class="profile-image-wrapper">
-              <img src="assets/images/picture.jpg" alt="Blasio Odhiambo" class="profile-image" />
-              <div class="image-overlay"></div>
-              <div class="image-glow"></div>
-            </div>
-            <div class="profile-badge">
-              <span class="badge-text">IT Professional</span>
-              <div class="badge-dot"></div>
-            </div>
-          </div>
+  <!-- ═══════════════════════════ SKILLS ═══════════════════════════ -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">03 / Skills</span>
+        <h2 class="section-title">Experience & <span class="accent">Skills</span></h2>
+        <div class="title-bar"></div>
+      </div>
 
-          <!-- Quick Stats -->
-          <div class="profile-stats">
-            <div class="stat-item">
-              <span class="stat-number">20+</span>
-              <span class="stat-label">Projects</span>
+      <!-- Work Experience -->
+      <h3 class="subsection-title">Work <span class="accent">Experience</span></h3>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div>
+                <span class="tl-company">Kenya Revenue Authority (KRA)</span>
+                <span class="tl-role">Solution Architect</span>
+              </div>
+              <span class="tl-period">Jan 2026 – Present</span>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">50+</span>
-              <span class="stat-label">Technologies</span>
+            <p class="tl-desc">Designing scalable and secure enterprise solutions supporting digital tax services, system integration, and modernization initiatives aligned with KRA's business and technology objectives.</p>
+            <div class="tl-tags">
+              <span>Enterprise Architecture</span>
+              <span>Solution Design</span>
+              <span>System Integration</span>
+              <span>API Architecture</span>
+              <span>Security & Compliance</span>
+              <span>Digital Transformation</span>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Biography Area -->
-      <div class="biography-area">
-        <div class="biography-card">
-                   
-          <div class="biography-content">
-            <p class="intro-text">
-              I'm a passionate IT professional specializing in <span class="highlight-text">cybersecurity</span> and <span class="highlight-text">system reliability</span>, with hands-on experience bridging the gap between technical infrastructure and business objectives.
-            </p>
-            
-            <div class="journey-points">
-              <div class="journey-point">
-                <div class="point-icon">🛡️</div>
-                <div>
-                  <h4>Security-First Mindset</h4>
-                  <p>Focus on protecting digital assets through proactive threat mitigation and secure system design.</p>
-                </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div>
+                <span class="tl-company">Vince Solutions Limited</span>
+                <span class="tl-role">IT Support Specialist</span>
               </div>
-              
-              <div class="journey-point">
-                <div class="point-icon">🔧</div>
-                <div>
-                  <h4>Problem Solver</h4>
-                  <p>Excel at diagnosing complex technical issues and implementing efficient, scalable solutions.</p>
-                </div>
-              </div>
-              
-              <div class="journey-point">
-                <div class="point-icon">🚀</div>
-                <div>
-                  <h4>Continuous Innovator</h4>
-                  <p>Driven by emerging technologies and always seeking better ways to optimize systems.</p>
-                </div>
-              </div>
+              <span class="tl-period">May 2024 – Oct 2024</span>
             </div>
+            <p class="tl-desc">Delivered technical support, maintained network reliability, and assisted in improving system security and operational efficiency across business environments.</p>
+            <div class="tl-tags">
+              <span>IT Support</span>
+              <span>Network Security</span>
+              <span>System Troubleshooting</span>
+              <span>Infrastructure Support</span>
+            </div>
+          </div>
+        </div>
 
-            <div class="expertise-section">
-              <h4>Core <span class="highlight">Expertise</span></h4>
-              <div class="expertise-tags">
-                <span class="expertise-tag">
-                  <span class="tag-icon">🔒</span>
-                  Cybersecurity
-                </span>
-                <span class="expertise-tag">
-                  <span class="tag-icon">🖥️</span>
-                  IT Infrastructure
-                </span>
-                <span class="expertise-tag">
-                  <span class="tag-icon">☁️</span>
-                  Cloud Systems
-                </span>
-                <span class="expertise-tag">
-                  <span class="tag-icon">🤖</span>
-                  AI Integration
-                </span>
-                <span class="expertise-tag">
-                  <span class="tag-icon">🌐</span>
-                  Network Security
-                </span>
-                <span class="expertise-tag">
-                  <span class="tag-icon">⚡</span>
-                  System Optimization
-                </span>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-top">
+              <div>
+                <span class="tl-company">Kisumu Law Courts</span>
+                <span class="tl-role">IT Trainee</span>
               </div>
+              <span class="tl-period">May 2023 – Aug 2023</span>
             </div>
-
-            <!-- Professional Statement -->
-            <div class="professional-statement">
-              <div class="statement-icon">💡</div>
-              <p class="statement-text">
-                I believe in creating technology solutions that are not only functional but also <strong>secure, efficient, and scalable</strong>. My approach combines technical expertise with strategic thinking to deliver real value in today's digital landscape.
-              </p>
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="about-actions">
-              <a href="#projects" class="btn btn-primary">
-                <span>View My Work</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-              <a href="#contact" class="btn btn-outline">
-                <span>Let's Connect</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 8v4l3 3"/>
-                </svg>
-              </a>
+            <p class="tl-desc">Supported daily IT operations assisting with network maintenance, endpoint configuration, user support, and basic system administration in a government environment.</p>
+            <div class="tl-tags">
+              <span>Network Administration</span>
+              <span>Technical Support</span>
+              <span>Endpoint Configuration</span>
+              <span>System Maintenance</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- Why Work With Me Section -->
-<section id="why-me" class="why-section">
-  <h2 class="section-main-title">
-    Why <span class="highlight">Work With Me</span>
-  </h2>
 
-  <p class="section-subtitle">
-    A combination of technical skills, adaptability, and continuous growth
-  </p>
+      <!-- Professional Skills -->
+      <h3 class="subsection-title" style="margin-top: 5rem;">Professional <span class="accent">Skills</span></h3>
+      <p class="subsection-sub">Core competencies in IT, cybersecurity, and emerging technologies</p>
 
-  <div class="section-divider"></div>
-
-  <div class="why-content animate-section">
-    <div class="why-grid">
-
-      <!-- Problem Solving -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player
-            src="https://assets10.lottiefiles.com/packages/lf20_49rdyysj.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-
-        <h3>Problem Solving</h3>
-
-        <p>
-          Enjoy building practical solutions and solving real-world technical
-          challenges through modern technologies and creative thinking.
-        </p>
-      </div>
-
-      <!-- Adaptability -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player
-            src="https://assets2.lottiefiles.com/packages/lf20_jtbfg2nb.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-
-        <h3>Adaptability</h3>
-
-        <p>
-          Comfortable working in different environments and learning new tools,
-          systems, and technologies quickly.
-        </p>
-      </div>
-
-      <!-- Team Collaboration -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player
-            src="https://assets9.lottiefiles.com/packages/lf20_3rwasyjy.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-
-        <h3>Team Collaboration</h3>
-
-        <p>
-          Works well with teams, communicates effectively, and contributes
-          positively toward shared goals and project success.
-        </p>
-      </div>
-
-      <!-- Continuous Learning -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player
-            src="https://assets1.lottiefiles.com/packages/lf20_m9zragkd.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-
-        <h3>Continuous Learning</h3>
-
-        <p>
-          Passionate about improving technical skills and staying updated with
-          modern industry trends and emerging technologies.
-        </p>
-      </div>
-
-      <!-- Security Awareness -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player
-            src="https://assets4.lottiefiles.com/packages/lf20_gxcnsfk2.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-
-        <h3>Security Awareness</h3>
-
-        <p>
-          Understands the importance of secure systems, data protection, and
-          maintaining reliable technology practices.
-        </p>
-      </div>
-
-      <!-- Project Experience -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player
-            src="https://assets5.lottiefiles.com/packages/lf20_iorpbol0.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-
-        <h3>Project Experience</h3>
-
-        <p>
-          Built and worked on practical projects involving web development,
-          system integration, AI tools, and IT support solutions.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-    <!-- Work Experience -->
-<div class="experience-section">
-  <h3 class="subsection-title">Work <span class="highlight">Experience</span></h3>
-  
-  <div class="experience-timeline">
-    <!-- KRA - Solution Architect -->
-    <div class="experience-card">
-      <div class="experience-header">
-        <div class="company-info">
-          <span class="company-name">Kenya Revenue Authority (KRA)</span>
-          <span class="experience-period">Jan 2026 – Present</span>
-        </div>
-        <span class="experience-role">Solution Architect</span>
-      </div>
-      
-      <p class="experience-description">
-        Designing scalable and secure enterprise solutions that support digital tax services, system integration, and modernization initiatives aligned with KRA’s business and technology objectives.
-      </p>
-      
-         
-      <div class="experience-tags">
-        <span>Enterprise Architecture</span>
-        <span>Solution Design</span>
-        <span>System Integration</span>
-        <span>API Architecture</span>
-        <span>Security & Compliance</span>
-        <span>Digital Transformation</span>
-      </div>
-    </div>
-
-    <!-- Vince Solutions Limited -->
-    <div class="experience-card">
-      <div class="experience-header">
-        <div class="company-info">
-          <span class="company-name">Vince Solutions Limited</span>
-          <span class="experience-period">May 2024 – Oct 2024</span>
-        </div>
-        <span class="experience-role">IT Support Specialist</span>
-      </div>
-
-      <p class="experience-description">
-        Delivered technical support, maintained network reliability, and assisted in improving system security and operational efficiency across business environments.
-      </p>
-
-      <div class="experience-tags">
-        <span>IT Support</span>
-        <span>Network Security</span>
-        <span>System Troubleshooting</span>
-        <span>Infrastructure Support</span>
-      </div>
-    </div>
-
-    <!-- Kisumu Law Courts -->
-    <div class="experience-card">
-      <div class="experience-header">
-        <div class="company-info">
-          <span class="company-name">Kisumu Law Courts</span>
-          <span class="experience-period">May 2023 – Aug 2023</span>
-        </div>
-        <span class="experience-role">IT Trainee</span>
-      </div>
-
-      <p class="experience-description">
-        Supported daily IT operations by assisting with network maintenance, endpoint configuration, user support, and basic system administration within a government environment.
-      </p>
-
-      <div class="experience-tags">
-        <span>Network Administration</span>
-        <span>Technical Support</span>
-        <span>Endpoint Configuration</span>
-        <span>System Maintenance</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- Professional Skills -->
-    <div class="professional-skills">
-      <h3 class="subsection-title">Professional <span class="highlight">Skills</span></h3>
-      <p class="skills-intro">Core competencies in IT, cybersecurity, and emerging technologies</p>
-      
       <div class="skills-grid">
-        <!-- Cybersecurity -->
         <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
+          <div class="skill-card-icon"><i class="fas fa-shield-halved"></i></div>
           <h4>Cybersecurity</h4>
           <p>Threat analysis, vulnerability assessment, and security monitoring to protect digital assets.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 85%"></div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="85">
+              <div class="skill-fill"></div>
             </div>
-            <span class="proficiency-label">Advanced</span>
+            <span class="skill-level">Advanced · 85%</span>
           </div>
         </div>
 
-        <!-- IT Support -->
         <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets4.lottiefiles.com/packages/lf20_kxsd2ytq.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
+          <div class="skill-card-icon"><i class="fas fa-headset"></i></div>
           <h4>IT Support</h4>
           <p>Technical troubleshooting, system maintenance, and user assistance across diverse environments.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 90%"></div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="90">
+              <div class="skill-fill"></div>
             </div>
-            <span class="proficiency-label">Expert</span>
+            <span class="skill-level">Expert · 90%</span>
           </div>
         </div>
 
-        <!-- System Administration -->
         <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets2.lottiefiles.com/packages/lf20_u4yrau.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
+          <div class="skill-card-icon"><i class="fas fa-server"></i></div>
           <h4>System Administration</h4>
           <p>Server management, infrastructure optimization, and system monitoring for reliability.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 80%"></div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="80">
+              <div class="skill-fill"></div>
             </div>
-            <span class="proficiency-label">Advanced</span>
+            <span class="skill-level">Advanced · 80%</span>
           </div>
         </div>
 
-        <!-- Hardware Maintenance -->
         <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets7.lottiefiles.com/packages/lf20_x62chJ.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
+          <div class="skill-card-icon"><i class="fas fa-microchip"></i></div>
           <h4>Hardware Maintenance</h4>
           <p>Installs, repairs, and maintains computer components for seamless operations.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 75%"></div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="75">
+              <div class="skill-fill"></div>
             </div>
-            <span class="proficiency-label">Proficient</span>
+            <span class="skill-level">Proficient · 75%</span>
           </div>
         </div>
 
-        <!-- Artificial Intelligence -->
         <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets3.lottiefiles.com/packages/lf20_yl8g3vux.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
+          <div class="skill-card-icon"><i class="fas fa-brain"></i></div>
           <h4>Artificial Intelligence</h4>
           <p>Model development, data analysis, and AI solution implementation for automation.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 70%"></div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="70">
+              <div class="skill-fill"></div>
             </div>
-            <span class="proficiency-label">Intermediate</span>
+            <span class="skill-level">Intermediate · 70%</span>
           </div>
         </div>
 
-        <!-- Web Development -->
         <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets4.lottiefiles.com/packages/lf20_tno6cg2w.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
+          <div class="skill-card-icon"><i class="fas fa-code"></i></div>
           <h4>Web Development</h4>
           <p>Full-stack development, responsive design, and modern web application architecture.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 85%"></div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="85">
+              <div class="skill-fill"></div>
             </div>
-            <span class="proficiency-label">Advanced</span>
+            <span class="skill-level">Advanced · 85%</span>
           </div>
         </div>
 
-        <!-- Cloud Computing -->
         <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_fcfjwiyb.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
+          <div class="skill-card-icon"><i class="fas fa-cloud"></i></div>
           <h4>Cloud Computing</h4>
           <p>AWS services deployment, cloud security, and scalable infrastructure implementation.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 75%"></div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="75">
+              <div class="skill-fill"></div>
             </div>
-            <span class="proficiency-label">Proficient</span>
+            <span class="skill-level">Proficient · 75%</span>
           </div>
         </div>
 
-        <!-- Data Visualization -->
         <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_jtbfg2nb.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
+          <div class="skill-card-icon"><i class="fas fa-chart-bar"></i></div>
           <h4>Data Visualization</h4>
           <p>Transforms raw datasets into meaningful insights through visual storytelling.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 80%"></div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar" data-width="70">
+              <div class="skill-fill"></div>
             </div>
-            <span class="proficiency-label">Intermidiate</span>
+            <span class="skill-level">Intermediate · 70%</span>
           </div>
         </div>
-      </div> 
-    </div>
+      </div>
 
-    <!-- Languages & Technologies -->
-    <div class="technologies-section">
-      <h3 class="subsection-title">Languages & <span class="highlight">Technologies</span></h3>
-      <p class="tech-intro">Tools and technologies I work with</p>
-      
+      <!-- Technologies -->
+      <h3 class="subsection-title" style="margin-top: 5rem;">Languages & <span class="accent">Technologies</span></h3>
+      <p class="subsection-sub">Tools and technologies I work with daily</p>
+
       <div class="tech-grid">
-        <!-- Core Programming Languages -->
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy" />
           <span>JavaScript</span>
         </div>
-
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" loading="lazy" />
           <span>Python</span>
         </div>
-
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" loading="lazy" />
           <span>SQL</span>
         </div>
-
-        <!-- Web & App Development -->
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" loading="lazy" />
           <span>HTML5</span>
         </div>
-
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" loading="lazy" />
           <span>CSS3</span>
         </div>
-
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" loading="lazy" />
           <span>React</span>
         </div>
-
-        <!-- Cloud & DevOps -->
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" />
-          <span>AWS Cloud</span>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" loading="lazy" />
+          <span>AWS</span>
         </div>
-
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" loading="lazy" />
           <span>Linux</span>
         </div>
-
-        <!-- Data & AI Tools -->
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" loading="lazy" />
           <span>Pandas</span>
         </div>
-
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" loading="lazy" />
           <span>TensorFlow</span>
         </div>
-
-        <!-- Frameworks & Utilities -->
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit" loading="lazy" />
           <span>Streamlit</span>
         </div>
-
         <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" loading="lazy" />
           <span>Git</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
-  <section id="education" class="education-section">
-    <h1 class="head">Education & <span class="highlight">Qualifications</span></h1>
-    <p class="subtitle">My academic journey and professional certifications</p>
-    <div class="underline"></div>
-
-    <div class="education-content animate-section">
-      
-
-  <div class="education-content animate-section">
-    <!-- CV + Credly -->
-    <div class="cv-download">
-      <div class="cv-text">
-        <p class="cv-title">Get a full overview of my qualifications</p>
-      </div>
-      <a href="assets/cv/Blasio_odhiambo CV.pdf" class="cv-button" target="_blank">Read CV</a>
-      <div class="credly-section">
-        <a href="https://www.credly.com/users/blasio-odhiambo" class="credly-button" target="_blank">View Badges</a>
-      </div>
-    </div>
-
-    <!-- TIMELINE CONTAINER -->
-    <div class="timeline-container">
-      
-      <!-- Timeline Item 1 (Left side) -->
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content education-card">
-          <div class="timeline-date">May 2025 – December 2025</div>
-          <h3>Cyber Security</h3>
-          <p class="institution">Cyber Shujaa</p>
-          <p>Focused on penetration testing, vulnerability assessment, and incident response techniques. Gaining hands-on experience with security tools and frameworks.</p>
-        </div>
-      </div>
-
-      <!-- Timeline Item 2 (Right side) -->
-      <div class="timeline-item right">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content education-card">
-          <div class="timeline-date">Jan 2025 – May 2025</div>
-          <h3>Cloud Computing</h3>
-          <p class="institution">AWS re/Start</p>
-          <p>Trained in AWS core services, architecture best practices, and cloud security. Earned AWS Cloud Practitioner certification through practical labs and projects.</p>
-        </div>
-      </div>
-
-      <!-- Timeline Item 3 (Left side) -->
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content education-card">
-          <div class="timeline-date">Jan 2021 – Nov 2024</div>
-          <h3>BSc in Information Technology</h3>
-          <p class="institution">University of Eldoret</p>
-          <p>Studied networks, software development, cybersecurity fundamentals, database management, and system administration. Completed project on Mobile Development.</p>
-        </div>
-      </div>
-                    
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-  <section id="projects" class="projects-section">
-    <h2 class="section-title">My <span class="highlight">Projects</span></h2>
-    <div class="line"></div>
-
-    <div class="projects-content animate-section">
-      <!-- Smart Goat Management System -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/smartgoat.png" alt="Smart Goat Management System" />
-        <div class="project-details">
-          <h3>Smart Goat Management System</h3>
-          <p>
-            An AI-powered farm management platform helping goat farmers track livestock, monitor breeding cycles, and gain data-driven insights for better productivity.
-          </p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>Streamlit</span>
-            <span>Machine Learning</span>
-            <span>Firebase</span>
-          </div>
-          <div class="project-links">
-            <a href="https://smartgoatmanager.streamlit.app/" class="demo" target="_blank">Demo</a>
-            <a href="https://github.com/Bblasio/Smart_Goat_Manager.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Portfolio Website -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/portfolio.png" alt="Personal Portfolio Website" />
-        <div class="project-details">
-          <h3>Personal Portfolio Website</h3>
-          <p>
-            A responsive personal portfolio showcasing my projects, skills, and professional journey with smooth animations and a clean UI.
-          </p>
-          <div class="tech-stack">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>React</span>
-          </div>
-          <div class="project-links">
-            <a href="https://blasio.netlify.app/" class="demo" target="_blank">Demo</a>
-            <a href="https://github.com/Bblasio/My-Portfolio.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Wangwana Airbnb Platform -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/wangwana.png" alt="Wangwana Airbnb Platform" />
-        <div class="project-details">
-          <h3>Wangwana Airbnb Platform</h3>
-          <p>
-            A sleek, Airbnb-inspired platform for Kisumu City. Lets visitors explore homes, view listings, and make bookings with a premium, responsive navy-gold interface.
-          </p>
-          <div class="tech-stack">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-          <div class="project-links">
-            <a href="https://bblasio.github.io/web-development-week-8-Assignment-/" class="demo" target="_blank">Demo</a>
-            <a href="https://github.com/Bblasio/web-development-week-8-Assignment-.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Iris Classification App -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/irishapp.png" alt="Iris Classification App" />
-        <div class="project-details">
-          <h3>Iris Classification App</h3>
-          <p>
-            A machine learning web app that classifies iris flowers using petal and sepal data. It includes real-time metrics, confusion matrix, and decision visualizations.
-          </p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>Streamlit</span>
-            <span>scikit-learn</span>
-          </div>
-          <div class="project-links">
-            <a href="https://classicalml.streamlit.app/" class="demo" target="_blank">Demo</a>
-            <a href="https://github.com/Bblasio/AI_Tools.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- MNIST Digit Recognizer -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/MNIST.png" alt="MNIST Digit Recognizer" />
-        <div class="project-details">
-          <h3>MNIST Digit Recognizer</h3>
-          <p>
-            A deep learning app that identifies handwritten digits using a CNN built with TensorFlow and Streamlit, visualizing accuracy and model predictions.
-          </p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>TensorFlow</span>
-            <span>Streamlit</span>
-          </div>
-          <div class="project-links">
-            <a href="https://cnnmodeldl.streamlit.app/" class="demo" target="_blank">Demo</a>
-            <a href="https://github.com/Bblasio/AI_Tools.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Leave Application App -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/leaveapp.png" alt="Leave Application App" />
-        <div class="project-details">
-          <h3>Leave Application App</h3>
-          <p>
-            A mobile application that replaces paper-based leave requests with a digital system for applying, approving, and tracking employee leaves efficiently.
-          </p>
-          <div class="tech-stack">
-            <span>Java</span>
-            <span>SQLite</span>
-            <span>Android</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Bblasio/KISUMULAWCOURTLEAVESYSTEM.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
-<section id="interests" class="interests-section">
-  <div class="interests-container">
-    <!-- Section Header -->
-    <div class="interests-header">
-      <h2 class="section-main-title">My <span class="highlight">Passions</span> & Interests</h2>
-      <p class="section-subtitle">Exploring the technologies and ideas that inspire my work</p>
-      <div class="section-divider"></div>
-    </div>
 
-    <!-- Blog-style Content -->
-    <div class="interests-content animate-section">
-      <!-- AI & Machine Learning Article -->
-      <article class="interest-article">
-        <div class="article-header">
-          <div class="article-meta">
-            <span class="article-category">Technology</span>
-            <span class="article-date">Ongoing Exploration</span>
-          </div>
-          <h3 class="article-title">The Art of Intelligent Systems: <span class="highlight">AI & Machine Learning</span></h3>
-        </div>
-        
-        <div class="article-content">
-          <div class="article-visual">
-            <lottie-player 
-              src="https://assets4.lottiefiles.com/packages/lf20_pprxh53t.json" 
-              background="transparent"  
-              speed="1"  
-              style="width: 100%; height: 200px; margin: 0 auto;"  
-              loop  
-              autoplay>
-            </lottie-player>
-          </div>
-          
-          <div class="article-body">
-            <p class="article-intro">
-              I'm fascinated by how machines can learn from data and make intelligent decisions. My journey into AI started with practical applications building systems that actually solve problems.
-            </p>
-            
-            <div class="article-points">
-              <div class="article-point">
-                <h4>Why It Matters</h4>
-                <p>AI isn't just about algorithms, it's about creating tools that enhance human capabilities, automate repetitive tasks, and uncover insights hidden in data.</p>
-              </div>
-              
-              <div class="article-point">
-                <h4>My Approach</h4>
-                <p>Focus on practical, ethical AI applications. From my iris classification project to digit recognition systems, I prioritize solutions that are explainable and beneficial.</p>
-              </div>
-              
-              <div class="article-point">
-                <h4>Future Exploration</h4>
-                <p>Interested in AI for cybersecurity threat detection and predictive system maintenance, areas where intelligent systems can create real security value.</p>
-              </div>
-            </div>
-            
-            <div class="article-tags">
-              <span class="article-tag">Machine Learning</span>
-              <span class="article-tag">Neural Networks</span>
-              <span class="article-tag">Data Science</span>
-              <span class="article-tag">AI Ethics</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Cybersecurity Article -->
-      <article class="interest-article">
-        <div class="article-header">
-          <div class="article-meta">
-            <span class="article-category">Security</span>
-            <span class="article-date">Core Focus</span>
-          </div>
-          <h3 class="article-title">Building Digital <span class="highlight">Fortresses</span>: Cybersecurity in Practice</h3>
-        </div>
-        
-        <div class="article-content">
-          <div class="article-visual">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json" 
-              background="transparent"  
-              speed="1"  
-              style="width: 100%; height: 200px; margin: 0 auto;"  
-              loop  
-              autoplay>
-            </lottie-player>
-          </div>
-          
-          <div class="article-body">
-            <p class="article-intro">
-              Security isn't a feature, it's a foundation. My interest in cybersecurity stems from seeing firsthand how vulnerabilities can impact real systems during my IT support roles.
-            </p>
-            
-            <div class="article-points">
-              <div class="article-point">
-                <h4>The Mindset Shift</h4>
-                <p>Thinking like both defender and attacker. It's about anticipating threats before they happen and building systems that are resilient by design.</p>
-              </div>
-              
-              <div class="article-point">
-                <h4>Real-World Application</h4>
-                <p>From securing endpoints in corporate environments to implementing network security measures, I've applied security principles across different contexts.</p>
-              </div>
-              
-              <div class="article-point">
-                <h4>Continuous Learning</h4>
-                <p>The threat landscape evolves daily. Staying current requires constant learning from penetration testing techniques to new defense strategies.</p>
-              </div>
-            </div>
-            
-            <div class="article-tags">
-              <span class="article-tag">Threat Analysis</span>
-              <span class="article-tag">Network Security</span>
-              <span class="article-tag">Ethical Hacking</span>
-              <span class="article-tag">Incident Response</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Cloud & Emerging Tech Article -->
-      <article class="interest-article">
-        <div class="article-header">
-          <div class="article-meta">
-            <span class="article-category">Innovation</span>
-            <span class="article-date">Future Forward</span>
-          </div>
-          <h3 class="article-title">The <span class="highlight">Cloud</span> Revolution & Beyond</h3>
-        </div>
-        
-        <div class="article-content">
-          <div class="article-visual">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json"
-              background="transparent"  
-              speed="1"  
-              style="width: 100%; height: 200px; margin: 0 auto;"  
-              loop  
-              autoplay>
-            </lottie-player>
-          </div>
-          
-          <div class="article-body">
-            <p class="article-intro">
-              Cloud computing represents the infrastructure of tomorrow. 
-            </p>
-            
-            <div class="article-points">
-              <div class="article-point">
-                <h4>Scalability & Accessibility</h4>
-                <p>The cloud democratizes powerful computing. Small projects can scale globally, and innovations can reach users anywhere instantly.</p>
-              </div>
-              
-              <div class="article-point">
-                <h4>Security in the Cloud</h4>
-                <p>Cloud security is a shared responsibility. Understanding this model is crucial for building applications that are both powerful and protected.</p>
-              </div>
-              
-              <div class="article-point">
-                <h4>What's Next</h4>
-                <p>Beyond traditional cloud: serverless architectures, edge computing, and how these technologies will shape the next generation of applications.</p>
-              </div>
-            </div>
-            
-            <div class="article-tags">
-              <span class="article-tag">Cloud Architecture</span>
-              <span class="article-tag">Serverless</span>
-              <span class="article-tag">Edge Computing</span>
-              <span class="article-tag">DevOps</span>
-            </div>
-          </div>
-        </div>
-      </article>
-
-            </div>
-    </div>
-  </div>
-</section>
-
-  <section id="contact" class="contact-section">
-    <h2>Get In <span class="highlight">Touch</span></h2>
-    <p class="subtitle">Ready to work together? Let's connect!</p>
-    <div class="line"></div>
-    <div class="contact-wrapper animate-section">
-      <!-- Contact Form -->
-      <div class="contact-message card">
-        <h3>Send me a message</h3>
-        <form id="contact-form" action="https://formspree.io/f/mzzaaogg" method="POST">
-          <label>Name</label>
-          <input type="text" id="name" name="name" placeholder="Your full name" required>
-          
-          <label>Email</label>
-          <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-          
-          <label>Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
-          
-          <label>Message</label>
-          <textarea rows="4" id="message" name="message" placeholder="Tell me about your project or just say hello!" required></textarea>
-          
-          <button type="submit" style="background-color: #9b5de5; border: none; width:100%; color: white; border-radius: 6px;">
-            Send Message
-          </button>
-          <p id="form-message"></p>
-        </form>
+  <!-- ═══════════════════════════ EDUCATION ═══════════════════════════ -->
+  <section id="education" class="section education-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">04 / Education</span>
+        <h2 class="section-title">Education & <span class="accent">Qualifications</span></h2>
+        <div class="title-bar"></div>
+        <p class="section-sub">My academic journey and professional certifications</p>
       </div>
-      <div class="contact-info card">
-        <h3>Contact Information</h3>
-        <div class="info-item">
-          <span class="icon-circle">
-            <img src="assets/images/mail.png" alt="Email Icon" class="contact-icon" />
-          </span>
-          <strong>odhisblasio@gmail.com</strong>
+
+      <div class="edu-actions">
+        <a href="assets/cv/Blasio_odhiambo CV.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-file-pdf"></i> Read CV
+        </a>
+        <a href="https://www.credly.com/users/blasio-odhiambo" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-medal"></i> View Badges on Credly
+        </a>
+      </div>
+
+      <div class="edu-timeline">
+        <div class="edu-item">
+          <div class="edu-icon"><i class="fas fa-shield-halved"></i></div>
+          <div class="edu-card">
+            <span class="edu-period">May 2025 – December 2025</span>
+            <h3>Cyber Security</h3>
+            <p class="edu-institution"><i class="fas fa-building-columns"></i> Cyber Shujaa</p>
+            <p>Focused on penetration testing, vulnerability assessment, and incident response techniques. Gained hands-on experience with security tools and frameworks.</p>
+          </div>
         </div>
-        <div class="info-item">
-          <span class="icon-circle">
-            <img src="assets/images/call.png" alt="Phone Icon" class="contact-icon" />
-          </span>
-          <strong>+254 703165843</strong>
+
+        <div class="edu-item">
+          <div class="edu-icon"><i class="fas fa-cloud"></i></div>
+          <div class="edu-card">
+            <span class="edu-period">Jan 2025 – May 2025</span>
+            <h3>Cloud Computing</h3>
+            <p class="edu-institution"><i class="fas fa-building-columns"></i> AWS re/Start</p>
+            <p>Trained in AWS core services, architecture best practices, and cloud security. Earned AWS Cloud Practitioner certification through practical labs and projects.</p>
+          </div>
         </div>
-        <div class="info-item">
-          <span class="icon-circle">
-            <img src="assets/images/pin.png" alt="Location Icon" class="contact-icon" />
-          </span>
-          <strong>Nairobi, Kenya</strong>
-        </div>
-        <div class="connect">
-          <h3>Connect with me</h3>
-          <div class="icons">
-            <a href="https://github.com/Bblasio" class="icon-link" target="_blank">
-              <img src="assets/images/github.png" alt="GitHub" class="contact-icon" />
-            </a>
-            <a href="https://www.linkedin.com/in/blasioodhiambo" class="icon-link" target="_blank">
-              <img src="assets/images/linkedin.png" alt="LinkedIn" class="contact-icon" />
-            </a>
+
+        <div class="edu-item">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-card">
+            <span class="edu-period">Jan 2021 – Nov 2024</span>
+            <h3>BSc in Information Technology</h3>
+            <p class="edu-institution"><i class="fas fa-building-columns"></i> University of Eldoret</p>
+            <p>Studied networks, software development, cybersecurity fundamentals, database management, and system administration. Completed final project on Mobile Development.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2026 Blasio Odhiambo. All rights reserved.</p>
+  <!-- ═══════════════════════════ PROJECTS ═══════════════════════════ -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">05 / Projects</span>
+        <h2 class="section-title">My <span class="accent">Projects</span></h2>
+        <div class="title-bar"></div>
+        <p class="section-sub">Selected work spanning AI, web, and mobile development</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Smart Goat -->
+        <div class="proj-card">
+          <div class="proj-img-wrap">
+            <img src="assets/images/smartgoat.png" alt="Smart Goat Management System dashboard screenshot" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://smartgoatmanager.streamlit.app/" class="proj-link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Bblasio/Smart_Goat_Manager.git" class="proj-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span>Python</span><span>Streamlit</span><span>Machine Learning</span><span>Firebase</span>
+            </div>
+            <h3>Smart Goat Management System</h3>
+            <p>An AI-powered farm management platform helping goat farmers track livestock, monitor breeding cycles, and gain data-driven insights for better productivity.</p>
+            <div class="proj-footer">
+              <a href="https://smartgoatmanager.streamlit.app/" class="proj-btn demo" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-play"></i> Live Demo
+              </a>
+              <a href="https://github.com/Bblasio/Smart_Goat_Manager.git" class="proj-btn code" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="proj-card">
+          <div class="proj-img-wrap">
+            <img src="assets/images/portfolio.png" alt="Personal portfolio website screenshot" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://blasio.netlify.app/" class="proj-link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Bblasio/My-Portfolio.git" class="proj-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
+            </div>
+            <h3>Personal Portfolio Website</h3>
+            <p>A responsive personal portfolio showcasing projects, skills, and professional journey with smooth animations and a clean, accessible UI.</p>
+            <div class="proj-footer">
+              <a href="https://blasio.netlify.app/" class="proj-btn demo" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-play"></i> Live Demo
+              </a>
+              <a href="https://github.com/Bblasio/My-Portfolio.git" class="proj-btn code" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wangwana -->
+        <div class="proj-card">
+          <div class="proj-img-wrap">
+            <img src="assets/images/wangwana.png" alt="Wangwana Airbnb platform screenshot" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://bblasio.github.io/web-development-week-8-Assignment-/" class="proj-link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Bblasio/web-development-week-8-Assignment-.git" class="proj-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <h3>Wangwana Airbnb Platform</h3>
+            <p>A sleek, Airbnb-inspired platform for Kisumu City. Lets visitors explore homes, view listings, and make bookings with a premium, responsive navy-gold interface.</p>
+            <div class="proj-footer">
+              <a href="https://bblasio.github.io/web-development-week-8-Assignment-/" class="proj-btn demo" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-play"></i> Live Demo
+              </a>
+              <a href="https://github.com/Bblasio/web-development-week-8-Assignment-.git" class="proj-btn code" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Iris -->
+        <div class="proj-card">
+          <div class="proj-img-wrap">
+            <img src="assets/images/irishapp.png" alt="Iris Classification app screenshot" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://classicalml.streamlit.app/" class="proj-link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Bblasio/AI_Tools.git" class="proj-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span>Python</span><span>Streamlit</span><span>scikit-learn</span>
+            </div>
+            <h3>Iris Classification App</h3>
+            <p>A machine learning web app that classifies iris flowers using petal and sepal measurements, with real-time metrics, confusion matrix, and decision visualizations.</p>
+            <div class="proj-footer">
+              <a href="https://classicalml.streamlit.app/" class="proj-btn demo" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-play"></i> Live Demo
+              </a>
+              <a href="https://github.com/Bblasio/AI_Tools.git" class="proj-btn code" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- MNIST -->
+        <div class="proj-card">
+          <div class="proj-img-wrap">
+            <img src="assets/images/MNIST.png" alt="MNIST Digit Recognizer app screenshot" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://cnnmodeldl.streamlit.app/" class="proj-link" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Bblasio/AI_Tools.git" class="proj-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span>Python</span><span>TensorFlow</span><span>Streamlit</span>
+            </div>
+            <h3>MNIST Digit Recognizer</h3>
+            <p>A deep learning app that identifies handwritten digits using a CNN built with TensorFlow, visualizing accuracy curves and model predictions in real time.</p>
+            <div class="proj-footer">
+              <a href="https://cnnmodeldl.streamlit.app/" class="proj-btn demo" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-play"></i> Live Demo
+              </a>
+              <a href="https://github.com/Bblasio/AI_Tools.git" class="proj-btn code" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leave App -->
+        <div class="proj-card">
+          <div class="proj-img-wrap">
+            <img src="assets/images/leaveapp.png" alt="Leave Application mobile app screenshot" loading="lazy" />
+            <div class="proj-overlay">
+              <a href="https://github.com/Bblasio/KISUMULAWCOURTLEAVESYSTEM.git" class="proj-link" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-tags">
+              <span>Java</span><span>SQLite</span><span>Android</span>
+            </div>
+            <h3>Leave Application App</h3>
+            <p>A mobile application replacing paper-based leave requests with a fully digital system for applying, approving, and tracking employee leaves efficiently.</p>
+            <div class="proj-footer">
+              <a href="https://github.com/Bblasio/KISUMULAWCOURTLEAVESYSTEM.git" class="proj-btn code" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ INTERESTS ═══════════════════════════ -->
+  <section id="interests" class="section interests-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">06 / Interests</span>
+        <h2 class="section-title">Passions & <span class="accent">Interests</span></h2>
+        <div class="title-bar"></div>
+        <p class="section-sub">Exploring technologies and ideas that shape my work</p>
+      </div>
+
+      <div class="interests-grid">
+
+        <article class="interest-card">
+          <div class="interest-icon-wrap ai-icon">
+            <i class="fas fa-brain"></i>
+          </div>
+          <div class="interest-meta">
+            <span class="int-category">Technology</span>
+            <span class="int-status">Ongoing Exploration</span>
+          </div>
+          <h3>AI & <span class="accent">Machine Learning</span></h3>
+          <p class="int-lead">Fascinated by how machines learn from data and make intelligent decisions. My journey started with building systems that solve real problems.</p>
+          <div class="int-points">
+            <div class="int-point">
+              <strong>Why It Matters</strong>
+              <p>AI enhances human capabilities, automates repetitive tasks, and uncovers insights hidden in data.</p>
+            </div>
+            <div class="int-point">
+              <strong>My Approach</strong>
+              <p>Practical, ethical AI — from iris classification to digit recognition, I prioritize explainable, beneficial solutions.</p>
+            </div>
+            <div class="int-point">
+              <strong>Future Direction</strong>
+              <p>AI for cybersecurity threat detection and predictive system maintenance — high-value, real-world security applications.</p>
+            </div>
+          </div>
+          <div class="int-tags">
+            <span>Machine Learning</span><span>Neural Networks</span><span>Data Science</span><span>AI Ethics</span>
+          </div>
+        </article>
+
+        <article class="interest-card">
+          <div class="interest-icon-wrap sec-icon">
+            <i class="fas fa-shield-halved"></i>
+          </div>
+          <div class="interest-meta">
+            <span class="int-category">Security</span>
+            <span class="int-status">Core Focus</span>
+          </div>
+          <h3>Building Digital <span class="accent">Fortresses</span></h3>
+          <p class="int-lead">Security isn't a feature — it's a foundation. My interest stems from seeing firsthand how vulnerabilities impact real systems.</p>
+          <div class="int-points">
+            <div class="int-point">
+              <strong>The Mindset Shift</strong>
+              <p>Thinking like both defender and attacker, anticipating threats before they occur and building resilient-by-design systems.</p>
+            </div>
+            <div class="int-point">
+              <strong>Real-World Application</strong>
+              <p>From securing endpoints in corporate environments to implementing network security measures across different operational contexts.</p>
+            </div>
+            <div class="int-point">
+              <strong>Continuous Learning</strong>
+              <p>The threat landscape evolves daily — staying current requires constant learning from pen-testing to new defense strategies.</p>
+            </div>
+          </div>
+          <div class="int-tags">
+            <span>Threat Analysis</span><span>Network Security</span><span>Ethical Hacking</span><span>Incident Response</span>
+          </div>
+        </article>
+
+        <article class="interest-card">
+          <div class="interest-icon-wrap cloud-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <div class="interest-meta">
+            <span class="int-category">Innovation</span>
+            <span class="int-status">Future Forward</span>
+          </div>
+          <h3>The <span class="accent">Cloud</span> Revolution & Beyond</h3>
+          <p class="int-lead">Cloud computing is the infrastructure of tomorrow. My AWS training solidified a deep appreciation for scalable, resilient architectures.</p>
+          <div class="int-points">
+            <div class="int-point">
+              <strong>Scalability & Accessibility</strong>
+              <p>The cloud democratizes powerful computing — small projects can scale globally and reach users anywhere instantly.</p>
+            </div>
+            <div class="int-point">
+              <strong>Security in the Cloud</strong>
+              <p>Cloud security is a shared responsibility model that is crucial for building applications that are both powerful and protected.</p>
+            </div>
+            <div class="int-point">
+              <strong>What's Next</strong>
+              <p>Serverless architectures, edge computing, and how these will shape the next generation of intelligent applications.</p>
+            </div>
+          </div>
+          <div class="int-tags">
+            <span>Cloud Architecture</span><span>Serverless</span><span>Edge Computing</span><span>DevOps</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CONTACT ═══════════════════════════ -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">07 / Contact</span>
+        <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+        <div class="title-bar"></div>
+        <p class="section-sub">Ready to work together? Let's connect!</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Form -->
+        <div class="contact-form-wrap">
+          <h3>Send Me a Message</h3>
+          <form id="contact-form" action="https://formspree.io/f/mzzaaogg" method="POST" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your.email@example.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or just say hello!" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+              <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+              <span class="btn-loading" aria-hidden="true"><i class="fas fa-spinner fa-spin"></i> Sending…</span>
+            </button>
+            <p id="form-message" role="alert" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <!-- Info -->
+        <div class="contact-info-wrap">
+          <h3>Contact Information</h3>
+
+          <div class="info-items">
+            <a href="mailto:odhisblasio@gmail.com" class="info-item">
+              <div class="info-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <span class="info-label">Email</span>
+                <span class="info-val">odhisblasio@gmail.com</span>
+              </div>
+            </a>
+            <a href="tel:+254703165843" class="info-item">
+              <div class="info-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <span class="info-label">Phone</span>
+                <span class="info-val">+254 703 165 843</span>
+              </div>
+            </a>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+              <div>
+                <span class="info-label">Location</span>
+                <span class="info-val">Nairobi, Kenya</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-block">
+            <h4>Connect With Me</h4>
+            <div class="social-links">
+              <a href="https://github.com/Bblasio" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+                <i class="fab fa-github"></i>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/blasioodhiambo" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+                <i class="fab fa-linkedin-in"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a href="https://www.credly.com/users/blasio-odhiambo" class="social-btn" target="_blank" rel="noopener noreferrer" aria-label="Credly badges">
+                <i class="fas fa-medal"></i>
+                <span>Credly</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="availability-card">
+            <div class="av-dot"></div>
+            <div>
+              <strong>Currently Open to Opportunities</strong>
+              <p>Open to full-time roles, consulting projects, and collaborations in cybersecurity, cloud, and IT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-name">B.Odhiambo</span>
+        <span class="logo-bracket">]</span>
+      </div>
+      <p class="footer-copy">&copy; 2026 Blasio Odhiambo. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://github.com/Bblasio" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/blasioodhiambo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
   </footer>
 
-  <script src="scripts.js"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Back to Top -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
   <script>
-    AOS.init({
-      duration: 1000,
-      once: true
+    // ── Mobile Nav ──
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('active', open);
+      hamburger.setAttribute('aria-expanded', open);
     });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Sticky header shadow ──
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ── Active nav link on scroll ──
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+          const link = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+          if (link) link.classList.add('active');
+        }
+      });
+    }, { threshold: 0.35 });
+    sections.forEach(s => observer.observe(s));
+
+    // ── Skill bars animate on scroll ──
+    const skillBars = document.querySelectorAll('.skill-bar');
+    const barObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const fill = e.target.querySelector('.skill-fill');
+          fill.style.width = e.target.dataset.width + '%';
+          barObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    skillBars.forEach(b => barObserver.observe(b));
+
+    // ── Roles ticker ──
+    const ticker = document.querySelector('.roles-ticker');
+    if (ticker) {
+      const items = ticker.querySelectorAll('.tick-item');
+      let idx = 0;
+      items.forEach((it, i) => { it.style.display = i === 0 ? 'block' : 'none'; });
+      setInterval(() => {
+        items[idx].classList.remove('tick-visible');
+        idx = (idx + 1) % items.length;
+        items.forEach(it => it.style.display = 'none');
+        items[idx].style.display = 'block';
+        void items[idx].offsetWidth;
+        items[idx].classList.add('tick-visible');
+      }, 2200);
+      items[0].classList.add('tick-visible');
+    }
+
+    // ── Contact form ──
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formMsg = document.getElementById('form-message');
+    if (form) {
+      form.addEventListener('submit', async e => {
+        e.preventDefault();
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+          });
+          if (res.ok) {
+            formMsg.textContent = '✓ Message sent! I\'ll get back to you soon.';
+            formMsg.className = 'form-success';
+            form.reset();
+          } else {
+            formMsg.textContent = '✗ Something went wrong. Please try emailing me directly.';
+            formMsg.className = 'form-error';
+          }
+        } catch {
+          formMsg.textContent = '✗ Network error. Please try again.';
+          formMsg.className = 'form-error';
+        }
+        submitBtn.classList.remove('loading');
+        submitBtn.disabled = false;
+      });
+    }
+
+    // ── Back to top ──
+    const btt = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btt.classList.toggle('visible', window.scrollY > 400);
+    });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // ── Scroll-reveal ──
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.why-card, .skill-card, .proj-card, .interest-card, .tl-item, .edu-item, .tech-item, .pillar')
+      .forEach(el => { el.classList.add('reveal'); revealObserver.observe(el); });
   </script>
 </body>
 </html>
