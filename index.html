@@ -1,1199 +1,911 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Blasio Odhiambo</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Blasio Odhiambo | IT Specialist | Solution Architect | Web Developer</title>
+  <meta name="description" content="IT professional focused on building, supporting, and improving practical technology solutions across enterprise systems, infrastructure, cloud, and web applications.">
+  <meta property="og:title" content="Blasio Odhiambo | IT Specialist | Solution Architect | Web Developer">
+  <meta property="og:description" content="IT professional focused on building, supporting, and improving practical technology solutions across enterprise systems, infrastructure, cloud, and web applications.">
+
+  <!-- Google Fonts: Roboto, Raleway, Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Raleway:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap Icons, Font Awesome & Devicon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+  <!-- Main CSS File -->
+  <link href="css/main.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <div class="theme-toggle">
-      <label class="theme-switch">
-        <input type="checkbox" id="theme-switch">
-        <span class="slider"></span>
-      </label>
+
+<body class="index-page">
+
+  <!-- Mobile Toggle Button -->
+  <button type="button" class="header-toggle" id="header-toggle" aria-label="Toggle Navigation Menu">
+    <i class="bi bi-list" id="header-toggle-icon"></i>
+  </button>
+
+  <!-- Left Sidebar Header (iPortfolio Layout) -->
+  <header id="header" class="header">
+    <div class="profile-img">
+      <img src="assets/images/picture.jpg" alt="Blasio Odhiambo" id="sidebar-profile-img">
     </div>
-    <div class="nav-container">
-      <h1 class="logo"><span class="highlight">Portfolio</span></h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#why-me">Why Me</a></li>
-          <li><a href="#experience-section">Skills</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#interests">Interests</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+
+    <a href="#hero" class="logo">
+      <h1 class="sitename">Blasio Odhiambo</h1>
+    </a>
+
+    <div class="social-links">
+      <a href="https://github.com/Bblasio" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/blasioodhiambo" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:odhisblasio@gmail.com" aria-label="Email" title="Email"><i class="bi bi-envelope-fill"></i></a>
+      <a href="https://www.credly.com/users/blasio-odhiambo" target="_blank" rel="noopener noreferrer" aria-label="Credly" title="Credly Badges"><i class="bi bi-award-fill"></i></a>
+      <a href="https://blasio.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Website" title="Live Portfolio"><i class="bi bi-globe"></i></a>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i> Home</a></li>
+        <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="#skills"><i class="bi bi-hdd-stack navicon"></i> Skills</a></li>
+        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
+        <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
+        <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Sidebar Theme Toggle -->
+    <div class="sidebar-footer">
+      <button type="button" class="sidebar-theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+        <i class="bi bi-sun" id="theme-icon"></i>
+        <span id="theme-label">Theme Mode</span>
+      </button>
     </div>
   </header>
-<!-- Update your hero section HTML slightly for better animation control -->
-<section id="home" class="hero-section">
-  <!-- ... existing background elements ... -->
-  
-  <div class="hero-container">
-    <div class="hero-left">
-      <div class="title-container">
-        <div class="greeting-text">
-          <span class="greeting-word">Hello</span>
-          <span class="greeting-comma">,</span>
-        </div>
-        
-        <h1 class="main-title">
-          <span class="title-line">
-            <span class="title-word">I'm Blasio Odhiambo</span>
-            <span class="title-name highlight">
-              <!-- Empty for typing animation -->
-            </span>
-          </span>
-          <span class="title-line">
-            <span class="last-name">
-              <!-- Empty for typing animation -->
-            </span>
-          </span>
-        </h1>
-        
-        <div class="role-container">
-          <div class="role-tags">
-            <!-- Will be populated by JavaScript -->
-          </div>
-        </div>
-      </div>
-      
-     
-        
-              
-        <!-- Primary CTA -->
-        <div class="hero-cta">
-          <a href="#about" class="cta-button learn-more">
-            <span class="button-text">Learn More</span>
-            <span class="button-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </span>
+
+  <!-- Main Content Wrapper -->
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+      <img src="assets/images/bg.jpg" alt="Background" class="hero-bg-img">
+
+      <div class="container">
+        <h2>Blasio Odhiambo</h2>
+        <p class="hero-role-title">
+          <span>IT Specialist</span>
+          <span class="role-separator">|</span>
+          <span>Solution Architect</span>
+          <span class="role-separator">|</span>
+          <span>Web Developer</span>
+        </p>
+        <p class="hero-subtext">
+          IT professional focused on building, supporting, and improving practical technology solutions across enterprise systems, infrastructure, cloud, and web applications.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#portfolio" class="btn-custom btn-accent" id="hero-cta-projects">
+            <span>View Projects</span>
+            <i class="bi bi-arrow-right"></i>
           </a>
-          
-          <div class="quick-links">
-            <a href="#projects" class="quick-link">
-              <span class="link-icon">🚀</span>
-              <span class="link-text">View Work</span>
-            </a>
-            <a href="#contact" class="quick-link">
-              <span class="link-icon">📧</span>
-              <span class="link-text">Contact</span>
-            </a>
+          <a href="https://www.credly.com/users/blasio-odhiambo" class="btn-custom btn-outline" id="hero-cta-credly" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-award"></i>
+            <span>Credly Badges</span>
+          </a>
+        </div>
+
+        <!-- Three Professional Cards Under Hero -->
+        <div class="hero-cards-grid" id="hero-professional-cards">
+          <div class="hero-card" id="hero-card-it">
+            <div class="hero-card-icon"><i class="bi bi-tools"></i></div>
+            <h3>IT Specialist</h3>
+            <p>Technical support, systems administration, network management, troubleshooting, and reliable IT infrastructure.</p>
+          </div>
+
+          <div class="hero-card" id="hero-card-architect">
+            <div class="hero-card-icon"><i class="bi bi-diagram-3"></i></div>
+            <h3>Solution Architect</h3>
+            <p>Solution design, systems analysis, enterprise architecture, application integration, and technical documentation.</p>
+          </div>
+
+          <div class="hero-card" id="hero-card-developer">
+            <div class="hero-card-icon"><i class="bi bi-code-slash"></i></div>
+            <h3>Web Developer</h3>
+            <p>Building practical web applications using modern development technologies, databases, APIs, and responsive interfaces.</p>
           </div>
         </div>
       </div>
-      
-      <!-- Right Column - Visual Elements -->
-      <div class="hero-right">
-        <div class="visual-container">
-          <!-- Animated Tech Icons -->
-          <div class="tech-icons">
-            <div class="tech-icon" data-icon="🔒">
-              <span class="icon-tooltip">Security</span>
-            </div>
-            <div class="tech-icon" data-icon="☁️">
-              <span class="icon-tooltip">Cloud</span>
-            </div>
-            <div class="tech-icon" data-icon="🤖">
-              <span class="icon-tooltip">AI</span>
-            </div>
-            <div class="tech-icon" data-icon="💻">
-              <span class="icon-tooltip">Web Development</span>
-            </div>
-          </div>
-          
-          <!-- Animated Lottie Background -->
-          <div class="lottie-bg">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_fcfjwiyb.json"
-              background="transparent"
-              speed="0.5"
-              style="width: 400px; height: 400px;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>        
-        </div>
-      </div>
-    </div>
-    
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <div class="scroll-text">Scroll to explore</div>
-      <div class="scroll-line">
-        <div class="scroll-dot"></div>
-      </div>
-    </div>
-  </section>
-<section id="about" class="about-section">
-  <div class="about-container">
-    <!-- Section Header -->
-    <div class="about-header">
-      <h2 class="section-main-title">About <span class="highlight">Me</span></h2>
-      <p class="section-subtitle">Get to know me</p>
-      <div class="section-divider"></div>
-    </div>
+    </section>
 
-    <!-- About Content -->
-    <div class="about-content animate-section">
-      <!-- Profile Area -->
-      <div class="profile-area">
-        <div class="profile-card">
-          <!-- Modern Frameless Image -->
-          <div class="profile-image-container">
-            <div class="profile-image-wrapper">
-              <img src="assets/images/picture.jpg" alt="Blasio Odhiambo" class="profile-image" />
-              <div class="image-overlay"></div>
-              <div class="image-glow"></div>
-            </div>
-            <div class="profile-badge">
-              <span class="badge-text">IT Professional</span>
-              <div class="badge-dot"></div>
-            </div>
-          </div>
-
-          <!-- Quick Stats -->
-          <div class="profile-stats">
-            <div class="stat-item">
-              <span class="stat-number">20+</span>
-              <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">50+</span>
-              <span class="stat-label">Technologies</span>
-            </div>
-          </div>
-        </div>
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="container section-title">
+        <h2>About</h2>
+        <p>
+          Bridging enterprise solution design with dependable infrastructure, systems analysis, and practical software engineering.
+        </p>
       </div>
 
-      <!-- Biography Area -->
-      <div class="biography-area">
-        <div class="biography-card">
-                   
-          <div class="biography-content">
-            <p class="intro-text">
-              I'm a passionate IT professional specializing in <span class="highlight-text">cybersecurity</span> and <span class="highlight-text">system reliability</span>, with hands-on experience bridging the gap between technical infrastructure and business objectives.
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-img-box">
+            <img src="assets/images/picture.jpg" class="img-fluid" alt="Blasio Odhiambo" id="about-profile-photo">
+          </div>
+
+          <div class="about-narrative-content">
+            <p>
+              I am an IT professional with hands-on experience across enterprise systems, solution design, network administration, technical support, cloud technologies, and web application development. My work combines practical technical skills with an understanding of how technology solutions are designed, integrated, deployed, and supported.
             </p>
-            
-            <div class="journey-points">
-              <div class="journey-point">
-                <div class="point-icon">🛡️</div>
-                <div>
-                  <h4>Security-First Mindset</h4>
-                  <p>Focus on protecting digital assets through proactive threat mitigation and secure system design.</p>
-                </div>
-              </div>
-              
-              <div class="journey-point">
-                <div class="point-icon">🔧</div>
-                <div>
-                  <h4>Problem Solver</h4>
-                  <p>Excel at diagnosing complex technical issues and implementing efficient, scalable solutions.</p>
-                </div>
-              </div>
-              
-              <div class="journey-point">
-                <div class="point-icon">🚀</div>
-                <div>
-                  <h4>Continuous Innovator</h4>
-                  <p>Driven by emerging technologies and always seeking better ways to optimize systems.</p>
-                </div>
-              </div>
+            <p>
+              My professional experience includes contributing to solution architecture and enterprise technology initiatives, supporting network and end-user environments, and developing practical software applications. I also continue to build my capabilities in cloud computing and cybersecurity, with a particular interest in secure and reliable technology solutions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Professional Focus Area -->
+        <div class="about-card" id="about-focus-card">
+          <h3 class="about-focus-title">
+            <i class="bi bi-bullseye"></i> Professional Focus
+          </h3>
+
+          <div class="about-focus-grid">
+            <div class="focus-box" id="focus-architecture">
+              <div class="focus-icon"><i class="bi bi-diagram-3"></i></div>
+              <h4>Solution Architecture</h4>
+              <p>Enterprise solution design, systems analysis, integration, technical documentation, and architecture principles.</p>
             </div>
 
-            <div class="expertise-section">
-              <h4>Core <span class="highlight">Expertise</span></h4>
-              <div class="expertise-tags">
-                <span class="expertise-tag">
-                  <span class="tag-icon">🔒</span>
-                  Cybersecurity
-                </span>
-                <span class="expertise-tag">
-                  <span class="tag-icon">🖥️</span>
-                  IT Infrastructure
-                </span>
-                <span class="expertise-tag">
-                  <span class="tag-icon">☁️</span>
-                  Cloud Systems
-                </span>
-                <span class="expertise-tag">
-                  <span class="tag-icon">🤖</span>
-                  AI Integration
-                </span>
-                <span class="expertise-tag">
-                  <span class="tag-icon">🌐</span>
-                  Network Security
-                </span>
-                <span class="expertise-tag">
-                  <span class="tag-icon">⚡</span>
-                  System Optimization
-                </span>
-              </div>
+            <div class="focus-box" id="focus-infrastructure">
+              <div class="focus-icon"><i class="bi bi-hdd-network"></i></div>
+              <h4>IT Infrastructure</h4>
+              <p>Network administration, systems support, troubleshooting, endpoint management, and infrastructure reliability.</p>
             </div>
 
-            <!-- Professional Statement -->
-            <div class="professional-statement">
-              <div class="statement-icon">💡</div>
-              <p class="statement-text">
-                I believe in creating technology solutions that are not only functional but also <strong>secure, efficient, and scalable</strong>. My approach combines technical expertise with strategic thinking to deliver real value in today's digital landscape.
+            <div class="focus-box" id="focus-web">
+              <div class="focus-icon"><i class="bi bi-code-slash"></i></div>
+              <h4>Web Development</h4>
+              <p>Web applications, databases, APIs, responsive interfaces, and practical software solutions.</p>
+            </div>
+
+            <div class="focus-box" id="focus-cloud">
+              <div class="focus-icon"><i class="bi bi-shield-check"></i></div>
+              <h4>Cloud &amp; Security</h4>
+              <p>Cloud technologies, security fundamentals, monitoring, secure system practices, and continuous technical development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stats-item">
+            <i class="bi bi-diagram-2"></i>
+            <div class="stats-info">
+              <span class="stats-count">100+</span>
+              <span class="stats-label">Network Nodes Supported</span>
+            </div>
+          </div>
+
+          <div class="stats-item">
+            <i class="bi bi-award"></i>
+            <div class="stats-info">
+              <span class="stats-count">5+</span>
+              <span class="stats-label">Industry Certifications</span>
+            </div>
+          </div>
+
+          <div class="stats-item">
+            <i class="bi bi-kanban"></i>
+            <div class="stats-info">
+              <span class="stats-count">7+</span>
+              <span class="stats-label">Software Projects Built</span>
+            </div>
+          </div>
+
+          <div class="stats-item">
+            <i class="bi bi-shield-check"></i>
+            <div class="stats-info">
+              <span class="stats-count">99.9%</span>
+              <span class="stats-label">Operational System Reliability</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+      <div class="container section-title">
+        <h2>Skills</h2>
+        <p>Technical competencies developed through enterprise environments, academic study, and hands-on projects.</p>
+      </div>
+
+      <div class="container">
+        <!-- Tools and Technologies Showcase (From Screenshot) -->
+        <div class="tools-showcase-wrap">
+          <h3 class="tools-showcase-title">Tools and technologies I work with</h3>
+          <div class="tools-cards-row">
+            <!-- JavaScript -->
+            <div class="tech-icon-card" id="tech-card-js">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm16.525 13.707c-.131-.82-.664-1.504-2.438-2.238-.59-.262-1.2-.508-1.2-1.016 0-.443.344-.721.885-.721.574 0 .935.213 1.295.689l1.41-1.017c-.672-.984-1.557-1.426-2.705-1.426-1.639 0-2.705 1.016-2.705 2.508 0 1.574 1.016 2.197 2.377 2.77 1.016.443 1.344.754 1.344 1.246 0 .541-.492.885-1.18.885-.885 0-1.426-.475-1.836-1.213l-1.475.984c.688 1.328 1.737 1.934 3.311 1.934 1.934 0 3.016-1.049 3.016-2.615l-.098-.77zm-7.082-5.492H10.59v5.902c0 1.213-.689 1.639-1.672 1.639-.525 0-.984-.131-1.311-.344l-.393 1.574c.459.262 1.147.459 2.016.459 1.967 0 3.213-1.082 3.213-3.246v-5.984z"/></svg>
+              </div>
+              <span class="tech-icon-name">JavaScript</span>
+            </div>
+
+            <!-- Python -->
+            <div class="tech-icon-card" id="tech-card-python">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.006 2.753h5.814v.826H3.883S0 5.792 0 11.956c0 6.165 3.398 5.952 3.398 5.952h2.029v-2.852s-.11-3.398 3.343-3.398h5.759v-.853h.001V5.717s.493-5.717-5.616-5.717zm-3.23 1.808c.55 0 .996.446.996.996 0 .55-.446.996-.996.996a.997.997 0 0 1-.996-.996c0-.55.446-.996.996-.996zM12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.006-2.753h-5.814v-.826h8.137S24 18.208 24 12.044c0-6.165-3.398-5.952-3.398-5.952h-2.029v2.852s.11 3.398-3.343 3.398H9.471v.853h-.001v5.092S8.977 24 15.086 24h-3zm3.23-1.808a.997.997 0 0 1-.996-.996c0-.55.446-.996.996-.996.55 0 .996.446.996.996 0 .55-.446.996-.996.996z"/></svg>
+              </div>
+              <span class="tech-icon-name">Python</span>
+            </div>
+
+            <!-- SQL -->
+            <div class="tech-icon-card" id="tech-card-sql">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M19.78 11.18c-.41-1.07-1.1-2.01-2-2.73-1.42-1.15-3.2-1.74-5.02-1.68-.42.01-.84.07-1.25.16-.78.17-1.52.47-2.19.89-1.01.63-1.83 1.51-2.4 2.54-.42.76-.7 1.59-.83 2.45-.16 1.08-.08 2.19.24 3.23.23.75.59 1.45 1.07 2.06.33.42.73.78 1.18 1.07.24.16.51.29.79.38.3.1.61.16.92.17.65.02 1.3-.12 1.88-.41.52-.26.97-.64 1.31-1.12.3-.42.5-.9.59-1.41.05-.28.06-.57.03-.86-.06-.57-.27-1.12-.61-1.58-.3-.41-.7-.73-1.16-.94-.37-.17-.77-.25-1.17-.24-.46.01-.91.14-1.3.38-.28.17-.52.41-.68.7-.13.23-.2.49-.22.75 0 .16.03.32.08.47.09.26.26.49.49.65.23.16.51.24.79.23.23-.01.45-.09.63-.22.14-.1.25-.24.31-.4.04-.11.05-.23.03-.35-.02-.1-.08-.19-.16-.25-.09-.07-.2-.1-.31-.1h-.14c-.07.02-.14.07-.17.13-.02.04-.02.09-.01.13.01.04.04.07.08.09.05.02.1.02.15 0 .04-.02.07-.05.08-.09.02-.07-.01-.15-.08-.18-.08-.03-.17 0-.21.07-.04.06-.03.14.02.19.06.06.15.07.22.03.07-.04.1-.12.08-.2-.02-.08-.1-.13-.18-.12-.08.01-.15.07-.16.15-.01.08.04.15.12.18.08.03.17 0 .2-.07.03-.07 0-.15-.06-.19-.07-.05-.15-.03-.2.03-.05.06-.03.15.03.2.06.05.15.04.2-.02.05-.06.04-.15-.02-.2-.06-.05-.14-.04-.2.01-.06.05-.06.14-.01.2.05.06.14.06.2.01.06-.05.06-.14.01-.2-.05-.06-.14-.06-.2-.01-.06.05-.06.14-.01.2.05.06.14.06.2.01.06-.05.06-.14.01-.2-.05-.06-.14-.06-.2-.01l-.01.01c-.13.06-.26.15-.35.26-.14.18-.21.4-.2.63.02.29.15.56.36.76.25.24.59.37.94.36.43-.01.85-.18 1.18-.47.37-.33.63-.77.74-1.26.1-.44.09-.9-.03-1.33-.14-.5-.4-.96-.76-1.33-.42-.43-.95-.73-1.53-.88-.65-.17-1.33-.17-1.98 0-.71.18-1.36.54-1.89 1.04-.57.54-.99 1.22-1.23 1.97-.26.82-.32 1.69-.17 2.54.14.79.46 1.54.93 2.19.53.73 1.23 1.32 2.04 1.72.9.44 1.9.66 2.91.64 1.12-.02 2.22-.32 3.19-.88 1.03-.6 1.88-1.45 2.47-2.48.56-.98.88-2.09.93-3.22.05-1.19-.2-2.38-.72-3.45z"/></svg>
+              </div>
+              <span class="tech-icon-name">SQL</span>
+            </div>
+
+            <!-- HTML5 -->
+            <div class="tech-icon-card" id="tech-card-html5">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413H5.41l.36 4.07h11.45l-.4 4.515-4.843 1.343-4.84-1.345-.264-2.955H2.812l.504 5.677L11.977 21l8.641-2.402.972-14.185z"/></svg>
+              </div>
+              <span class="tech-icon-name">HTML5</span>
+            </div>
+
+            <!-- CSS3 -->
+            <div class="tech-icon-card" id="tech-card-css3">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413H5.41l.36 4.07h7.38l-.34 3.79-4.833 1.342-.267-2.997H3.63l.53 5.955L11.977 21l7.817-2.172.796-14.415z"/></svg>
+              </div>
+              <span class="tech-icon-name">CSS3</span>
+            </div>
+
+            <!-- React -->
+            <div class="tech-icon-card" id="tech-card-react">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12 9.07c-1.62 0-2.93 1.31-2.93 2.93s1.31 2.93 2.93 2.93 2.93-1.31 2.93-2.93c0-1.61-1.31-2.93-2.93-2.93zm0 4.86c-1.07 0-1.93-.86-1.93-1.93 0-1.07.86-1.93 1.93-1.93 1.07 0 1.93.86 1.93 1.93 0 1.07-.86 1.93-1.93 1.93zM23.95 10.97c-.24-1.63-1.39-3.05-3.08-3.79-1.57-.69-3.41-.75-5.26-.35-.74.16-1.49.4-2.22.71C11.95 6.64 10.23 5.4 8.5 4.3c-1.74-1.1-3.66-1.69-5.41-1.54-1.67.14-3.01 1.25-3.5 2.91-.56 1.88.07 4.09 1.63 5.79 1.45 1.58 3.48 2.58 5.61 2.93-.16.74-.4 1.49-.71 2.22-1.12 1.44-2.36 3.16-3.46 4.89-1.1 1.74-1.69 3.66-1.54 5.41.14 1.67 1.25 3.01 2.91 3.5 1.88.56 4.09-.07 5.79-1.63 1.58-1.45 2.58-3.48 2.93-5.61.74.16 1.49.4 2.22.71 1.44 1.12 3.16 2.36 4.89 3.46 1.74 1.1 3.66 1.69 5.41 1.54 1.67-.14 3.01-1.25 3.5-2.91.56-1.88-.07-4.09-1.63-5.79-1.45-1.58-3.48-2.58-5.61-2.93.16-.74.4-1.49.71-2.22 1.12-1.44 2.36-3.16 3.46-4.89 1.11-1.75 1.7-3.67 1.55-5.42zm-12.87 9.8c-.89-.25-1.75-.62-2.55-1.11-.79-.49-1.5-1.09-2.11-1.79-1.15-1.32-1.6-2.97-1.23-4.32.34-1.24 1.34-2.02 2.58-2.02.43 0 .88.1 1.34.29 1.38.58 2.52 1.65 3.42 3 .73 1.1 1.28 2.35 1.62 3.66-.99.69-2.06 1.13-3.07 1.29zm8.69-7.23c-1.38-.58-2.52-1.65-3.42-3-.73-1.1-1.28-2.35-1.62-3.66.99-.69 2.06-1.13 3.07-1.29.89.25 1.75.62 2.55 1.11.79.49 1.5 1.09 2.11 1.79 1.15 1.32 1.6 2.97 1.23 4.32-.34 1.24-1.34 2.02-2.58 2.02-.43 0-.88-.1-1.34-.29z"/></svg>
+              </div>
+              <span class="tech-icon-name">React</span>
+            </div>
+
+            <!-- AWS Cloud -->
+            <div class="tech-icon-card" id="tech-card-aws">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M6.54 13.98c-.14-.26-.11-.5.08-.72.63-.73 1.57-1.42 2.76-1.99.78-.37 1.67-.64 2.62-.76 1.48-.19 2.96-.06 4.34.42 1.14.39 2.1 1.03 2.79 1.83.18.21.2.45.06.71-.14.26-.37.38-.67.33-.8-.14-1.62-.2-2.46-.2-1.8 0-3.52.3-5.06.87-.76.28-1.5.64-2.18 1.07-.3.19-.57.17-.7-.08l-1.58-1.48zm12.3 2.5c.34-.14.7-.04.9.27.67 1.03.88 2.08.62 3.03-.27.97-.93 1.74-1.92 2.21-.92.44-1.99.56-3.13.34-.34-.07-.5-.35-.42-.69.07-.34.35-.5.69-.42.87.17 1.7.08 2.42-.26.7-.33 1.16-.88 1.36-1.58.2-1.04-.3-1.93-1.03-2.61-.17-.16-.24-.36-.18-.55l.7-1.04v.3zM4.14 7.21h2.24l2.5 7.8h-1.68l-.54-1.88H4.11l-.55 1.88H1.89l2.25-7.8zm2.14 4.57L5.27 8.52l-1.02 3.26h2.03zm7.04-4.57l1.7 5.73 1.64-5.73h1.69l1.63 5.73 1.69-5.73h1.72l-2.58 7.8h-1.63l-1.66-5.46-1.66 5.46h-1.64l-2.58-7.8h1.68z"/></svg>
+              </div>
+              <span class="tech-icon-name">AWS Cloud</span>
+            </div>
+
+            <!-- Linux -->
+            <div class="tech-icon-card" id="tech-card-linux">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12.002 0c-3.167 0-4.877 2.05-5.352 4.609-.323 1.743.08 3.525.08 4.793 0 .428-.485 1.58-.934 2.115-.45.534-1.43 1.258-2.227 1.867-1.12.855-1.597 1.885-1.22 3.125.32 1.05 1.295 1.758 2.723 1.957.51.07 1.037.07 1.586.012.338-.035.73-.105 1.166-.215.115.342.258.68.428 1.01.69 1.342 1.782 2.373 3.158 2.973.127.428-.057.88-.475 1.144-.658.416-1.52.684-2.51.78-.453.045-.694.46-.5.856.195.397.66.586 1.12.514 1.488-.23 2.766-.826 3.617-1.707.127-.133.242-.275.344-.424.363.027.732.04 1.107.04.38 0 .753-.013 1.12-.04.1.15.215.29.34.424.853.88 2.13 1.477 3.618 1.707.46.072.926-.117 1.12-.514.195-.396-.046-.81-.5-.856-.99-.096-1.85-.364-2.51-.78-.418-.264-.602-.716-.475-1.144 1.376-.6 2.468-1.63 3.158-2.973.17-.33.313-.668.428-1.01.435.11.828.18 1.166.215.55.058 1.076.058 1.586-.012 1.428-.2 2.403-.907 2.723-1.957.377-1.24-.1-2.27-1.22-3.125-.797-.61-1.777-1.333-2.227-1.867-.45-.535-.934-1.687-.934-2.115 0-1.268.403-3.05.08-4.793C16.88 2.05 15.17 0 12.002 0zm-1.88 4.25c.573 0 1.037.465 1.037 1.038s-.464 1.037-1.037 1.037c-.574 0-1.038-.464-1.038-1.037s.464-1.038 1.038-1.038zm3.76 0c.574 0 1.038.465 1.038 1.038s-.464 1.037-1.038 1.037-1.037-.464-1.037-1.037.464-1.038 1.037-1.038z"/></svg>
+              </div>
+              <span class="tech-icon-name">Linux</span>
+            </div>
+
+            <!-- Pandas -->
+            <div class="tech-icon-card" id="tech-card-pandas">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M6.22 3.65h2.89v16.7H6.22V3.65zm4.34 3.75h2.89v12.95h-2.89V7.4zm4.33-3.75h2.89v16.7h-2.89V3.65zM2 10.87h2.89v9.48H2v-9.48zm17.11-3.47H22v12.95h-2.89V7.4z"/></svg>
+              </div>
+              <span class="tech-icon-name">Pandas</span>
+            </div>
+
+            <!-- TensorFlow -->
+            <div class="tech-icon-card" id="tech-card-tensorflow">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M12 0L1.75 5.92v11.83L6.96 20.7V8.89l5.04-2.91 5.04 2.91v11.81l5.21-2.95V5.92L12 0zm0 8.89l-3.32 1.92v6.28l3.32 1.91 3.32-1.91v-6.28L12 8.89z"/></svg>
+              </div>
+              <span class="tech-icon-name">TensorFlow</span>
+            </div>
+
+            <!-- Streamlit -->
+            <div class="tech-icon-card" id="tech-card-streamlit">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M17.84 8.78L13.19 1.1a1.44 1.44 0 0 0-2.45 0L6.09 8.78a1.44 1.44 0 0 0 .53 2.04l.11.06 1.77.96-3.83 6.31a1.44 1.44 0 0 0 .61 2.06l.16.07 10.99 4.6a1.44 1.44 0 0 0 1.96-1.28v-.15l-.26-7.39 1.34-.84a1.44 1.44 0 0 0 .37-2.05zm-5.84-5.1l3.52 5.82h-7.04l3.52-5.82zm-2.09 7.74h4.18l-1.39 2.3h-1.4l-1.39-2.3zm4.55 10.37L7.38 18.9l2.76-4.55 2.1 3.46a1.44 1.44 0 0 0 2.46 0l1.7-2.8.06 6.78z"/></svg>
+              </div>
+              <span class="tech-icon-name">Streamlit</span>
+            </div>
+
+            <!-- Git -->
+            <div class="tech-icon-card" id="tech-card-git">
+              <div class="tech-icon-box">
+                <svg viewBox="0 0 24 24"><path d="M23.546 10.93L13.067.452a1.536 1.536 0 0 0-2.172 0l-2.16 2.16 2.742 2.742a1.823 1.823 0 0 1 2.307 2.308l2.64 2.64a1.823 1.823 0 1 1-.955.955l-2.462-2.463a1.823 1.823 0 0 1-1.95-.452l-2.73 2.73a1.823 1.823 0 1 1-1.077-.282v-4.57a1.823 1.823 0 0 1 .452-1.95L5.178 4.793.454 9.517a1.536 1.536 0 0 0 0 2.172l10.48 10.48c.6.6 1.572.6 2.172 0l10.44-10.44a1.536 1.536 0 0 0 0-2.172v-.627z"/></svg>
+              </div>
+              <span class="tech-icon-name">Git</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Categorized Competency Cards with Imported Logos -->
+        <div class="skills-grid">
+          <!-- Card 1: IT Support & Systems -->
+          <div class="skill-category-card" id="skill-cat-systems">
+            <h3 class="category-title"><i class="bi bi-tools"></i> IT Support &amp; Systems</h3>
+            <div class="skill-logos-grid">
+              <div class="skill-logo-item" title="Windows Server" aria-label="Windows Server">
+                <i class="devicon-windows8-original"></i>
+              </div>
+              <div class="skill-logo-item" title="Linux &amp; Unix" aria-label="Linux &amp; Unix">
+                <i class="devicon-linux-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="Ubuntu Linux" aria-label="Ubuntu Linux">
+                <i class="devicon-ubuntu-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="Red Hat Enterprise Linux" aria-label="Red Hat Enterprise Linux">
+                <i class="devicon-redhat-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="Active Directory" aria-label="Active Directory">
+                <i class="bi bi-diagram-3-fill"></i>
+              </div>
+              <div class="skill-logo-item" title="PC &amp; Server Hardware" aria-label="PC &amp; Server Hardware">
+                <i class="bi bi-cpu-fill"></i>
+              </div>
+              <div class="skill-logo-item" title="Helpdesk ITIL" aria-label="Helpdesk ITIL">
+                <i class="bi bi-headset"></i>
+              </div>
+              <div class="skill-logo-item" title="Diagnostics &amp; Troubleshooting" aria-label="Diagnostics &amp; Troubleshooting">
+                <i class="bi bi-wrench-adjustable-circle"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Networking & Infrastructure -->
+          <div class="skill-category-card" id="skill-cat-networking">
+            <h3 class="category-title"><i class="bi bi-hdd-network"></i> Networking &amp; Infrastructure</h3>
+            <div class="skill-logos-grid">
+              <div class="skill-logo-item" title="Cisco Systems" aria-label="Cisco Systems">
+                <i class="bi bi-router"></i>
+              </div>
+              <div class="skill-logo-item" title="TCP/IP &amp; Subnets" aria-label="TCP/IP &amp; Subnets">
+                <i class="bi bi-ethernet"></i>
+              </div>
+              <div class="skill-logo-item" title="Wi-Fi 6 &amp; LAN" aria-label="Wi-Fi 6 &amp; LAN">
+                <i class="bi bi-wifi"></i>
+              </div>
+              <div class="skill-logo-item" title="Network Switches &amp; Routing" aria-label="Network Switches &amp; Routing">
+                <i class="bi bi-hdd-stack-fill"></i>
+              </div>
+              <div class="skill-logo-item" title="Courtroom AV &amp; LAN" aria-label="Courtroom AV &amp; LAN">
+                <i class="bi bi-display"></i>
+              </div>
+              <div class="skill-logo-item" title="DNS, DHCP &amp; NAT" aria-label="DNS, DHCP &amp; NAT">
+                <i class="bi bi-globe2"></i>
+              </div>
+              <div class="skill-logo-item" title="Network Firewalls &amp; Security" aria-label="Network Firewalls &amp; Security">
+                <i class="bi bi-shield-lock-fill"></i>
+              </div>
+              <div class="skill-logo-item" title="Nginx Reverse Proxy" aria-label="Nginx Reverse Proxy">
+                <i class="devicon-nginx-original"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Cloud & Architecture -->
+          <div class="skill-category-card" id="skill-cat-cloud">
+            <h3 class="category-title"><i class="bi bi-cloud-arrow-up"></i> Cloud &amp; Architecture</h3>
+            <div class="skill-logos-grid">
+              <div class="skill-logo-item" title="AWS Cloud" aria-label="AWS Cloud">
+                <i class="devicon-amazonwebservices-original"></i>
+              </div>
+              <div class="skill-logo-item" title="Solution Architecture" aria-label="Solution Architecture">
+                <i class="bi bi-layers-half"></i>
+              </div>
+              <div class="skill-logo-item" title="Docker Containers" aria-label="Docker Containers">
+                <i class="devicon-docker-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="Kubernetes Orchestration" aria-label="Kubernetes Orchestration">
+                <i class="devicon-kubernetes-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="REST &amp; Web APIs" aria-label="REST &amp; Web APIs">
+                <i class="bi bi-plugin"></i>
+              </div>
+              <div class="skill-logo-item" title="System Integration" aria-label="System Integration">
+                <i class="bi bi-arrow-left-right"></i>
+              </div>
+              <div class="skill-logo-item" title="Architecture Documentation" aria-label="Architecture Documentation">
+                <i class="bi bi-file-earmark-code"></i>
+              </div>
+              <div class="skill-logo-item" title="Cloudflare CDN &amp; Security" aria-label="Cloudflare CDN &amp; Security">
+                <i class="devicon-cloudflare-plain"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Development & Data -->
+          <div class="skill-category-card" id="skill-cat-dev">
+            <h3 class="category-title"><i class="bi bi-code-slash"></i> Development &amp; Data</h3>
+            <div class="skill-logos-grid">
+              <div class="skill-logo-item" title="Python" aria-label="Python">
+                <i class="devicon-python-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="MySQL &amp; SQL" aria-label="MySQL &amp; SQL">
+                <i class="devicon-mysql-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="PostgreSQL" aria-label="PostgreSQL">
+                <i class="devicon-postgresql-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="JavaScript ES6+" aria-label="JavaScript ES6+">
+                <i class="devicon-javascript-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="React.js" aria-label="React.js">
+                <i class="devicon-react-original"></i>
+              </div>
+              <div class="skill-logo-item" title="HTML5" aria-label="HTML5">
+                <i class="devicon-html5-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="CSS3" aria-label="CSS3">
+                <i class="devicon-css3-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="Pandas Data Analysis" aria-label="Pandas Data Analysis">
+                <i class="devicon-pandas-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="Git Version Control" aria-label="Git Version Control">
+                <i class="devicon-git-plain"></i>
+              </div>
+              <div class="skill-logo-item" title="Bash &amp; Shell Scripting" aria-label="Bash &amp; Shell Scripting">
+                <i class="devicon-bash-plain"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Security & Compliance -->
+          <div class="skill-category-card" id="skill-cat-security">
+            <h3 class="category-title"><i class="bi bi-shield-lock"></i> Security &amp; Compliance</h3>
+            <div class="skill-logos-grid">
+              <div class="skill-logo-item" title="Endpoint Security" aria-label="Endpoint Security">
+                <i class="bi bi-shield-check"></i>
+              </div>
+              <div class="skill-logo-item" title="Security Monitoring &amp; SIEM" aria-label="Security Monitoring &amp; SIEM">
+                <i class="bi bi-activity"></i>
+              </div>
+              <div class="skill-logo-item" title="Patch Management &amp; Hardening" aria-label="Patch Management &amp; Hardening">
+                <i class="bi bi-patch-check-fill"></i>
+              </div>
+              <div class="skill-logo-item" title="SSL / TLS Encryption" aria-label="SSL / TLS Encryption">
+                <i class="bi bi-lock-fill"></i>
+              </div>
+              <div class="skill-logo-item" title="Identity &amp; Access Management (IAM)" aria-label="Identity &amp; Access Management (IAM)">
+                <i class="bi bi-fingerprint"></i>
+              </div>
+              <div class="skill-logo-item" title="Cybersecurity &amp; Threat Defense" aria-label="Cybersecurity &amp; Threat Defense">
+                <i class="bi bi-shield-shaded"></i>
+              </div>
+              <div class="skill-logo-item" title="Security Compliance &amp; Auditing" aria-label="Security Compliance &amp; Auditing">
+                <i class="bi bi-clipboard-check"></i>
+              </div>
+              <div class="skill-logo-item" title="Key Management &amp; Secrets" aria-label="Key Management &amp; Secrets">
+                <i class="bi bi-key-fill"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section light-background">
+      <div class="container section-title">
+        <h2>Resume</h2>
+        <p>Chronological, evidence-based track record across enterprise solution architecture, systems administration, and IT support.</p>
+      </div>
+
+      <div class="container">
+        <div class="resume-grid">
+          <!-- Left Column: Summary & Education -->
+          <div>
+            <h3 class="resume-title"><i class="bi bi-person-lines-fill"></i> Summary</h3>
+            <div class="edu-card">
+              <h4>Blasio Odhiambo</h4>
+              <p class="edu-desc">
+                <em>IT professional with hands-on enterprise experience spanning solution architecture, systems analysis, network administration, and end-user technical support. Focused on maintaining dependable infrastructure and engineering practical software solutions.</em>
+              </p>
+              <ul style="list-style: none; padding: 0; margin-top: 10px; font-size: 0.88rem;">
+                <li><i class="bi bi-geo-alt text-primary"></i> Nairobi, Kenya</li>
+                <li><i class="bi bi-telephone text-primary"></i> +254 703165843</li>
+                <li><i class="bi bi-envelope text-primary"></i> odhisblasio@gmail.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title" style="margin-top: 24px;"><i class="bi bi-mortarboard-fill"></i> Education &amp; Training</h3>
+
+            <div class="edu-card">
+              <h4>Bachelor of Science in Information Technology</h4>
+              <div class="edu-meta">
+                <span>University of Eldoret</span>
+                <span class="date">Jan 2021 – Nov 2024</span>
+              </div>
+              <p class="edu-desc">
+                Comprehensive study in computer networks, network security protocols, systems analysis, database management, and software engineering.
               </p>
             </div>
 
-            <!-- Action Buttons -->
-            <div class="about-actions">
-              <a href="#projects" class="btn btn-primary">
-                <span>View My Work</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </a>
-              <a href="#contact" class="btn btn-outline">
-                <span>Let's Connect</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 8v4l3 3"/>
-                </svg>
-              </a>
+            <div class="edu-card">
+              <h4>AWS re/Start Programme &amp; Cloud Practitioner</h4>
+              <div class="edu-meta">
+                <span>Amazon Web Services</span>
+                <span class="date">2025</span>
+              </div>
+              <p class="edu-desc">
+                Applied immersion in AWS cloud core architecture, security, compute, storage, networking, and Linux administration.
+              </p>
+            </div>
+
+            <div class="edu-card">
+              <h4>Cybersecurity Training</h4>
+              <div class="edu-meta">
+                <span>Cyber Shujaa</span>
+                <span class="date">2025</span>
+              </div>
+              <p class="edu-desc">
+                Practical training in defensive security, vulnerability assessments, endpoint protection, and security hygiene.
+              </p>
+            </div>
+
+            <div class="edu-card">
+              <h4>Certifications &amp; Credentials</h4>
+              <div class="edu-meta">
+                <span>AWS · Oracle · Google</span>
+                <span class="date">Verified Badges</span>
+              </div>
+              <p class="edu-desc">
+                AWS Certified Cloud Practitioner · Oracle AI Foundational Associate · Google Cybersecurity · Google IT Support · Google Project Management.
+              </p>
+              <div style="margin-top: 10px;">
+                <a href="https://www.credly.com/users/blasio-odhiambo" target="_blank" rel="noopener noreferrer" class="btn-custom btn-accent" style="padding: 6px 16px; font-size: 0.82rem;">
+                  <i class="bi bi-award"></i> View Credly Badges
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Why Work With Me Section - Employer Focused -->
-<section id="why-me" class="why-section">
-  <h2 class="section-main-title">Why <span class="highlight">Hire Me</span>?</h2>
-  <p class="section-subtitle">What I bring to your organization beyond technical skills</p>
-  <div class="section-divider"></div>
-  
-  <div class="why-content animate-section">
-    <div class="why-grid">
-      
-      <!-- Problem Solver -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player 
-            src="https://assets1.lottiefiles.com/packages/lf20_kkflmtur.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-        <h3>Proven Problem Solver</h3>
-        <p>Built practical solutions like a smart farm management system and AI-powered applications that solve real-world challenges. I don't just learn concepts, I apply them.</p>
-      </div>
-      
-      <!-- Project-Driven Learner -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player 
-            src="https://assets1.lottiefiles.com/packages/lf20_kkflmtur.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-        <h3>Project-Driven Development</h3>
-        <p>From concept to deployment, I've delivered 6+ functional projects including web applications, AI tools, and security solutions, demonstrating end-to-end execution capability.</p>
-      </div>
-      
-      <!-- Adaptable & Resourceful -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player 
-            src="https://assets1.lottiefiles.com/packages/lf20_kkflmtur.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-        <h3>Adaptable & Resourceful</h3>
-        <p>Successfully supported IT operations in both corporate and government environments, adapting quickly to different systems, protocols, and organizational cultures.</p>
-      </div>
-      
-      <!-- Security-Conscious Mindset -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player 
-            src="https://assets1.lottiefiles.com/packages/lf20_kkflmtur.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-        <h3>Security-Conscious Mindset</h3>
-        <p>Developed applications with security-first principles and maintained secure networks in production environments. Understands the critical importance of protecting digital assets.</p>
-      </div>
-      
-      <!-- Team Player -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player 
-            src="https://assets1.lottiefiles.com/packages/lf20_kkflmtur.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-        <h3>Collaborative Team Player</h3>
-        <p>Supported 50+ users in organizational settings, developed communication skills, and contributed to team objectives while maintaining individual accountability.</p>
-      </div>
-      
-      <!-- Growth Potential -->
-      <div class="why-card">
-        <div class="why-icon">
-          <lottie-player 
-            src="https://assets1.lottiefiles.com/packages/lf20_kkflmtur.json"
-            background="transparent"
-            speed="1"
-            style="width: 80px; height: 80px;"
-            loop
-            autoplay>
-          </lottie-player>
-        </div>
-        <h3>High Growth Potential</h3>
-        <p>Combines solid IT foundation with exposure to cutting-edge technologies (AI, Cloud, Security). Ready to grow with your organization and tackle emerging challenges.</p>
-      </div>
-      
-    </div>
-    
-    <!-- Company Value Proposition -->
-    <div class="value-proposition">
-      <h3 class="subsection-title">What <span class="highlight">Companies</span> Gain</h3>
-      
-      <div class="value-points">
-        <div class="value-point">
-          <div class="value-icon">🚀</div>
+
+          <!-- Right Column: Professional Experience -->
           <div>
-            <h4>Immediate Contribution</h4>
-            <p>Ready to add value from day one with practical IT support experience and proven project delivery skills.</p>
-          </div>
-        </div>
-        
-        <div class="value-point">
-          <div class="value-icon">🎯</div>
-          <div>
-            <h4>Cost-Effective Talent</h4>
-            <p>Entry-level enthusiasm combined with demonstrated capability provides excellent ROI on training investment.</p>
-          </div>
-        </div>
-        
-        <div class="value-point">
-          <div class="value-icon">🛡️</div>
-          <div>
-            <h4>Security Awareness</h4>
-            <p>Built-in understanding of security principles reduces organizational risk in today's threat landscape.</p>
-          </div>
-        </div>
-        
-        <div class="value-point">
-          <div class="value-icon">🔄</div>
-          <div>
-            <h4>Adaptability</h4>
-            <p>Experience across diverse environments means faster onboarding and flexibility in role assignments.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Employer Call to Action -->
-    <div class="employer-cta">
-      <div class="cta-content">
-        <h3>Looking for an <span class="highlight">Entry-Level Professional</span> who delivers?</h3>
-        <p class="cta-description">
-          I bring the perfect balance of foundational IT skills, project experience, and growth mindset that successful companies look for in emerging talent. My portfolio demonstrates what I can build, and my experience shows I can support your team effectively.
-        </p>
-        <div class="cta-buttons">
-          <a href="#projects" class="btn btn-primary">
-            <span>View My Projects</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-          <a href="#contact" class="btn btn-outline">
-            <span>Schedule Interview</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 8v4l3 3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-      
-      <div class="testimonial-preview">
-        <div class="quote-icon">"</div>
-        <p class="testimonial-text">The best junior hires are those who combine technical capability with problem-solving initiative and willingness to learn.</p>
-        <div class="testimonial-source">
-          <span class="source-name">Tech Industry Hiring Manager</span>
-          <span class="source-title">on ideal entry-level candidates</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            <h3 class="resume-title"><i class="bi bi-briefcase-fill"></i> Professional Experience</h3>
 
-    <!-- Work Experience -->
-    <div class="experience-section">
-      <h3 class="subsection-title">Work <span class="highlight">Experience</span></h3>
-      
-      <div class="experience-timeline">
-        <div class="experience-card">
-          <div class="experience-header">
-            <div class="company-info">
-              <span class="company-name">Vince Solutions Limited</span>
-              <span class="experience-period">May 2024 – Oct 2024</span>
-            </div>
-            <span class="experience-role">IT Support Specialist</span>
-          </div>
-          <p class="experience-description">
-            Provided frontline IT support, strengthened system security through vulnerability assessments, 
-            and optimized network performance to ensure reliable and secure business operations.
-          </p>
-          <div class="experience-tags">
-            <span>Network Security</span>
-            <span>System Optimization</span>
-            <span>IT Troubleshooting</span>
-          </div>
-        </div>
-
-        <div class="experience-card">
-          <div class="experience-header">
-            <div class="company-info">
-              <span class="company-name">Kisumu Law Courts</span>
-              <span class="experience-period">May 2023 – Aug 2023</span>
-            </div>
-            <span class="experience-role">IT Trainee</span>
-          </div>
-          <p class="experience-description">
-            Assisted in maintaining secure government networks, configured endpoints for optimal performance, 
-            and supported users to enhance system uptime and operational efficiency.
-          </p>
-          <div class="experience-tags">
-            <span>Network Administration</span>
-            <span>Endpoint Configuration</span>
-            <span>User Support</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Professional Skills -->
-    <div class="professional-skills">
-      <h3 class="subsection-title">Professional <span class="highlight">Skills</span></h3>
-      <p class="skills-intro">Core competencies in IT, cybersecurity, and emerging technologies</p>
-      
-      <div class="skills-grid">
-        <!-- Cybersecurity -->
-        <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
-          <h4>Cybersecurity</h4>
-          <p>Threat analysis, vulnerability assessment, and security monitoring to protect digital assets.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 85%"></div>
-            </div>
-            <span class="proficiency-label">Advanced</span>
-          </div>
-        </div>
-
-        <!-- IT Support -->
-        <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets4.lottiefiles.com/packages/lf20_kxsd2ytq.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
-          <h4>IT Support</h4>
-          <p>Technical troubleshooting, system maintenance, and user assistance across diverse environments.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 90%"></div>
-            </div>
-            <span class="proficiency-label">Expert</span>
-          </div>
-        </div>
-
-        <!-- System Administration -->
-        <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets2.lottiefiles.com/packages/lf20_u4yrau.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
-          <h4>System Administration</h4>
-          <p>Server management, infrastructure optimization, and system monitoring for reliability.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 80%"></div>
-            </div>
-            <span class="proficiency-label">Advanced</span>
-          </div>
-        </div>
-
-        <!-- Hardware Maintenance -->
-        <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets7.lottiefiles.com/packages/lf20_x62chJ.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
-          <h4>Hardware Maintenance</h4>
-          <p>Installs, repairs, and maintains computer components for seamless operations.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 75%"></div>
-            </div>
-            <span class="proficiency-label">Proficient</span>
-          </div>
-        </div>
-
-        <!-- Artificial Intelligence -->
-        <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets3.lottiefiles.com/packages/lf20_yl8g3vux.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
-          <h4>Artificial Intelligence</h4>
-          <p>Model development, data analysis, and AI solution implementation for automation.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 70%"></div>
-            </div>
-            <span class="proficiency-label">Intermediate</span>
-          </div>
-        </div>
-
-        <!-- Web Development -->
-        <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets4.lottiefiles.com/packages/lf20_tno6cg2w.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
-          <h4>Web Development</h4>
-          <p>Full-stack development, responsive design, and modern web application architecture.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 85%"></div>
-            </div>
-            <span class="proficiency-label">Advanced</span>
-          </div>
-        </div>
-
-        <!-- Cloud Computing -->
-        <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_fcfjwiyb.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
-          <h4>Cloud Computing</h4>
-          <p>AWS services deployment, cloud security, and scalable infrastructure implementation.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 75%"></div>
-            </div>
-            <span class="proficiency-label">Proficient</span>
-          </div>
-        </div>
-
-        <!-- Data Visualization -->
-        <div class="skill-card">
-          <div class="skill-icon">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_jtbfg2nb.json"
-              background="transparent"
-              speed="1"
-              style="width: 70px; height: 70px; margin: 0 auto;"
-              loop
-              autoplay>
-            </lottie-player>
-          </div>
-          <h4>Data Visualization</h4>
-          <p>Transforms raw datasets into meaningful insights through visual storytelling.</p>
-          <div class="skill-proficiency">
-            <div class="proficiency-bar">
-              <div class="proficiency-level" style="width: 80%"></div>
-            </div>
-            <span class="proficiency-label">Intermidiate</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Languages & Technologies -->
-    <div class="technologies-section">
-      <h3 class="subsection-title">Languages & <span class="highlight">Technologies</span></h3>
-      <p class="tech-intro">Tools and technologies I work with</p>
-      
-      <div class="tech-grid">
-        <!-- Core Programming Languages -->
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-          <span>JavaScript</span>
-        </div>
-
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-          <span>Python</span>
-        </div>
-
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
-          <span>SQL</span>
-        </div>
-
-        <!-- Web & App Development -->
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
-          <span>HTML5</span>
-        </div>
-
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
-          <span>CSS3</span>
-        </div>
-
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
-          <span>React</span>
-        </div>
-
-        <!-- Cloud & DevOps -->
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" />
-          <span>AWS Cloud</span>
-        </div>
-
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
-          <span>Linux</span>
-        </div>
-
-        <!-- Data & AI Tools -->
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" />
-          <span>Pandas</span>
-        </div>
-
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" />
-          <span>TensorFlow</span>
-        </div>
-
-        <!-- Frameworks & Utilities -->
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit" />
-          <span>Streamlit</span>
-        </div>
-
-        <div class="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-          <span>Git</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-  <section id="education" class="education-section">
-    <h1 class="head">Education & <span class="highlight">Qualifications</span></h1>
-    <p class="subtitle">My academic journey and professional certifications</p>
-    <div class="underline"></div>
-
-    <div class="education-content animate-section">
-      
-
-  <div class="education-content animate-section">
-    <!-- CV + Credly -->
-    <div class="cv-download">
-      <div class="cv-text">
-        <p class="cv-title">Get a full overview of my qualifications</p>
-      </div>
-      <a href="assets/cv/Blasio_odhiambo CV.pdf" class="cv-button" target="_blank">Read CV</a>
-      <div class="credly-section">
-        <a href="https://www.credly.com/users/blasio-odhiambo" class="credly-button" target="_blank">View Badges</a>
-      </div>
-    </div>
-
-    <!-- TIMELINE CONTAINER -->
-    <div class="timeline-container">
-      
-      <!-- Timeline Item 1 (Left side) -->
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content education-card">
-          <div class="timeline-date">May 2025 – Present</div>
-          <h3>Cyber Security</h3>
-          <p class="institution">Cyber Shujaa</p>
-          <p>Focused on penetration testing, vulnerability assessment, and incident response techniques. Gaining hands-on experience with security tools and frameworks.</p>
-        </div>
-      </div>
-
-      <!-- Timeline Item 2 (Right side) -->
-      <div class="timeline-item right">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content education-card">
-          <div class="timeline-date">Jan 2025 – May 2025</div>
-          <h3>Cloud Computing</h3>
-          <p class="institution">AWS re/Start</p>
-          <p>Trained in AWS core services, architecture best practices, and cloud security. Earned AWS Cloud Practitioner certification through practical labs and projects.</p>
-        </div>
-      </div>
-
-      <!-- Timeline Item 3 (Left side) -->
-      <div class="timeline-item left">
-        <div class="timeline-dot"></div>
-        <div class="timeline-content education-card">
-          <div class="timeline-date">Jan 2021 – Nov 2024</div>
-          <h3>BSc in Information Technology</h3>
-          <p class="institution">University of Eldoret</p>
-          <p>Studied networks, software development, cybersecurity fundamentals, database management, and system administration. Completed thesis on network security protocols.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-  <section id="projects" class="projects-section">
-    <h2 class="section-title">My <span class="highlight">Projects</span></h2>
-    <div class="line"></div>
-
-    <div class="projects-content animate-section">
-      <!-- Smart Goat Management System -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/smartgoat.png" alt="Smart Goat Management System" />
-        <div class="project-details">
-          <h3>Smart Goat Management System</h3>
-          <p>
-            An AI-powered farm management platform helping goat farmers track livestock, monitor breeding cycles, and gain data-driven insights for better productivity.
-          </p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>Streamlit</span>
-            <span>Machine Learning</span>
-            <span>Firebase</span>
-          </div>
-          <div class="project-links">
-            <a href="https://smartgoatmanager.streamlit.app/" class="demo" target="_blank">Demo</a>
-            <a href="https://github.com/Bblasio/Smart_Goat_Manager.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Portfolio Website -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/portfolio.png" alt="Personal Portfolio Website" />
-        <div class="project-details">
-          <h3>Personal Portfolio Website</h3>
-          <p>
-            A responsive personal portfolio showcasing my projects, skills, and professional journey with smooth animations and a clean UI.
-          </p>
-          <div class="tech-stack">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>React</span>
-          </div>
-          <div class="project-links">
-            <a href="https://blasio.netlify.app/" class="demo" target="_blank">Demo</a>
-            <a href="https://github.com/Bblasio/My-Portfolio.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Wangwana Airbnb Platform -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/wangwana.png" alt="Wangwana Airbnb Platform" />
-        <div class="project-details">
-          <h3>Wangwana Airbnb Platform</h3>
-          <p>
-            A sleek, Airbnb-inspired platform for Kisumu City. Lets visitors explore homes, view listings, and make bookings with a premium, responsive navy-gold interface.
-          </p>
-          <div class="tech-stack">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-          <div class="project-links">
-            <a href="https://bblasio.github.io/web-development-week-8-Assignment-/" class="demo" target="_blank">Demo</a>
-            <a href="https://github.com/Bblasio/web-development-week-8-Assignment-.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Iris Classification App -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/irishapp.png" alt="Iris Classification App" />
-        <div class="project-details">
-          <h3>Iris Classification App</h3>
-          <p>
-            A machine learning web app that classifies iris flowers using petal and sepal data. It includes real-time metrics, confusion matrix, and decision visualizations.
-          </p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>Streamlit</span>
-            <span>scikit-learn</span>
-          </div>
-          <div class="project-links">
-            <a href="https://classicalml.streamlit.app/" class="demo" target="_blank">Demo</a>
-            <a href="https://github.com/Bblasio/AI_Tools.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- MNIST Digit Recognizer -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/MNIST.png" alt="MNIST Digit Recognizer" />
-        <div class="project-details">
-          <h3>MNIST Digit Recognizer</h3>
-          <p>
-            A deep learning app that identifies handwritten digits using a CNN built with TensorFlow and Streamlit, visualizing accuracy and model predictions.
-          </p>
-          <div class="tech-stack">
-            <span>Python</span>
-            <span>TensorFlow</span>
-            <span>Streamlit</span>
-          </div>
-          <div class="project-links">
-            <a href="https://cnnmodeldl.streamlit.app/" class="demo" target="_blank">Demo</a>
-            <a href="https://github.com/Bblasio/AI_Tools.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Leave Application App -->
-      <div class="project-card" data-aos="fade-up">
-        <img src="assets/images/leaveapp.png" alt="Leave Application App" />
-        <div class="project-details">
-          <h3>Leave Application App</h3>
-          <p>
-            A mobile application that replaces paper-based leave requests with a digital system for applying, approving, and tracking employee leaves efficiently.
-          </p>
-          <div class="tech-stack">
-            <span>Java</span>
-            <span>SQLite</span>
-            <span>Android</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/Bblasio/KISUMULAWCOURTLEAVESYSTEM.git" class="code" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-<section id="interests" class="interests-section">
-  <div class="interests-container">
-    <!-- Section Header -->
-    <div class="interests-header">
-      <h2 class="section-main-title">My <span class="highlight">Passions</span> & Interests</h2>
-      <p class="section-subtitle">Exploring the technologies and ideas that inspire my work</p>
-      <div class="section-divider"></div>
-    </div>
-
-    <!-- Blog-style Content -->
-    <div class="interests-content animate-section">
-      <!-- AI & Machine Learning Article -->
-      <article class="interest-article">
-        <div class="article-header">
-          <div class="article-meta">
-            <span class="article-category">Technology</span>
-            <span class="article-date">Ongoing Exploration</span>
-          </div>
-          <h3 class="article-title">The Art of Intelligent Systems: <span class="highlight">AI & Machine Learning</span></h3>
-        </div>
-        
-        <div class="article-content">
-          <div class="article-visual">
-            <lottie-player 
-              src="https://assets4.lottiefiles.com/packages/lf20_pprxh53t.json" 
-              background="transparent"  
-              speed="1"  
-              style="width: 100%; height: 200px; margin: 0 auto;"  
-              loop  
-              autoplay>
-            </lottie-player>
-          </div>
-          
-          <div class="article-body">
-            <p class="article-intro">
-              I'm fascinated by how machines can learn from data and make intelligent decisions. My journey into AI started with practical applications building systems that actually solve problems.
-            </p>
-            
-            <div class="article-points">
-              <div class="article-point">
-                <h4>Why It Matters</h4>
-                <p>AI isn't just about algorithms, it's about creating tools that enhance human capabilities, automate repetitive tasks, and uncover insights hidden in data.</p>
+            <!-- Role 1: KRA (Solution Architect Intern) -->
+            <article class="experience-card" id="exp-kra">
+              <div class="experience-card-header">
+                <div class="experience-title-group">
+                  <h3>Solution Architect</h3>
+                  <span class="experience-company">Kenya Revenue Authority (KRA)</span>
+                </div>
+                <span class="experience-period">Jan 2026 – Present</span>
               </div>
-              
-              <div class="article-point">
-                <h4>My Approach</h4>
-                <p>Focus on practical, ethical AI applications. From my iris classification project to digit recognition systems, I prioritize solutions that are explainable and beneficial.</p>
+              <ul class="experience-points">
+                <li>Support solution design and technical documentation.</li>
+                <li>Participate in systems analysis and application integration activities.</li>
+                <li>Support testing, deployment and technical troubleshooting.</li>
+                <li>Contribute to solution design and enterprise architecture initiatives.</li>
+                <li>Assist with system maintenance, monitoring and continuous improvement.</li>
+              </ul>
+            </article>
+
+            <!-- Role 2: Vince Solutions -->
+            <article class="experience-card" id="exp-vince">
+              <div class="experience-card-header">
+                <div class="experience-title-group">
+                  <h3>IT Support Specialist &amp; Infrastructure</h3>
+                  <span class="experience-company">Vince Solutions Limited</span>
+                </div>
+                <span class="experience-period">May 2024 – Oct 2024</span>
               </div>
-              
-              <div class="article-point">
-                <h4>Future Exploration</h4>
-                <p>Interested in AI for cybersecurity threat detection and predictive system maintenance, areas where intelligent systems can create real security value.</p>
+              <ul class="experience-points">
+                <li>Delivered technical support for hardware, software, and local network infrastructure.</li>
+                <li>Managed end-user helpdesk requests, system maintenance, and user administration.</li>
+                <li>Supported system security monitoring, patch deployment, and endpoint compliance.</li>
+              </ul>
+            </article>
+
+            <!-- Role 3: Kisumu Law Courts -->
+            <article class="experience-card" id="exp-courts">
+              <div class="experience-card-header">
+                <div class="experience-title-group">
+                  <h3>ICT Support Intern</h3>
+                  <span class="experience-company">Kisumu Law Courts</span>
+                </div>
+                <span class="experience-period">May 2023 – Aug 2023</span>
+              </div>
+              <ul class="experience-points">
+                <li>Maintained workstations, courtroom digital technologies, and 100+ LAN network nodes.</li>
+                <li>Conducted network troubleshooting, hardware maintenance, and peripheral configuration.</li>
+                <li>Supported judicial officers and court staff with daily operational IT workflows and systems stability.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
+      <div class="container section-title">
+        <h2>Portfolio</h2>
+        <p>Featured projects, applications, and tools spanning machine learning, systems automation, and web platforms.</p>
+      </div>
+
+      <div class="container">
+        <!-- Filter Tabs -->
+        <div class="portfolio-filters" id="portfolio-filters">
+          <button type="button" class="active" data-filter="all">All Projects</button>
+          <button type="button" data-filter="cloud">Cloud &amp; Data</button>
+          <button type="button" data-filter="ml">Machine Learning</button>
+          <button type="button" data-filter="web">Web &amp; Mobile</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <!-- 1. Smart Goat Management System -->
+          <article class="project-card" data-category="cloud" id="proj-smartgoat">
+            <div class="project-card-thumb">
+              <img src="assets/images/smartgoat.png" alt="Smart Goat Management System" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Smart Goat Management System</h3>
+              <p class="project-card-desc">
+                A farm management application for tracking livestock health records, breeding schedules, and herd productivity metrics.
+              </p>
+              <div class="project-card-tech">Python · Firebase · Streamlit · Pandas</div>
+              <div class="project-card-links">
+                <a href="https://smartgoatmanager.streamlit.app/" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-box-arrow-up-right"></i> Live Demo
+                </a>
+                <a href="https://github.com/Bblasio/Smart_Goat_Manager.git" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
               </div>
             </div>
-            
-            <div class="article-tags">
-              <span class="article-tag">Machine Learning</span>
-              <span class="article-tag">Neural Networks</span>
-              <span class="article-tag">Data Science</span>
-              <span class="article-tag">AI Ethics</span>
-            </div>
-          </div>
-        </div>
-      </article>
+          </article>
 
-      <!-- Cybersecurity Article -->
-      <article class="interest-article">
-        <div class="article-header">
-          <div class="article-meta">
-            <span class="article-category">Security</span>
-            <span class="article-date">Core Focus</span>
-          </div>
-          <h3 class="article-title">Building Digital <span class="highlight">Fortresses</span>: Cybersecurity in Practice</h3>
-        </div>
-        
-        <div class="article-content">
-          <div class="article-visual">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json" 
-              background="transparent"  
-              speed="1"  
-              style="width: 100%; height: 200px; margin: 0 auto;"  
-              loop  
-              autoplay>
-            </lottie-player>
-          </div>
-          
-          <div class="article-body">
-            <p class="article-intro">
-              Security isn't a feature, it's a foundation. My interest in cybersecurity stems from seeing firsthand how vulnerabilities can impact real systems during my IT support roles.
-            </p>
-            
-            <div class="article-points">
-              <div class="article-point">
-                <h4>The Mindset Shift</h4>
-                <p>Thinking like both defender and attacker. It's about anticipating threats before they happen and building systems that are resilient by design.</p>
-              </div>
-              
-              <div class="article-point">
-                <h4>Real-World Application</h4>
-                <p>From securing endpoints in corporate environments to implementing network security measures, I've applied security principles across different contexts.</p>
-              </div>
-              
-              <div class="article-point">
-                <h4>Continuous Learning</h4>
-                <p>The threat landscape evolves daily. Staying current requires constant learning from penetration testing techniques to new defense strategies.</p>
+          <!-- 2. Carbon Emission Forecasting App -->
+          <article class="project-card" data-category="ml" id="proj-carbon">
+            <div class="project-card-thumb">
+              <img src="assets/images/carbonemssion.png" alt="Carbon Emission Forecasting App" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Carbon Emission Forecasting App</h3>
+              <p class="project-card-desc">
+                Machine learning application estimating carbon output from transportation patterns and energy usage metrics.
+              </p>
+              <div class="project-card-tech">Python · Scikit-Learn · Streamlit · Pandas</div>
+              <div class="project-card-links">
+                <a href="https://github.com/Bblasio/AI_Tools.git" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
               </div>
             </div>
-            
-            <div class="article-tags">
-              <span class="article-tag">Threat Analysis</span>
-              <span class="article-tag">Network Security</span>
-              <span class="article-tag">Ethical Hacking</span>
-              <span class="article-tag">Incident Response</span>
-            </div>
-          </div>
-        </div>
-      </article>
+          </article>
 
-      <!-- Cloud & Emerging Tech Article -->
-      <article class="interest-article">
-        <div class="article-header">
-          <div class="article-meta">
-            <span class="article-category">Innovation</span>
-            <span class="article-date">Future Forward</span>
-          </div>
-          <h3 class="article-title">The <span class="highlight">Cloud</span> Revolution & Beyond</h3>
-        </div>
-        
-        <div class="article-content">
-          <div class="article-visual">
-            <lottie-player 
-              src="https://assets1.lottiefiles.com/packages/lf20_jcikwtux.json"
-              background="transparent"  
-              speed="1"  
-              style="width: 100%; height: 200px; margin: 0 auto;"  
-              loop  
-              autoplay>
-            </lottie-player>
-          </div>
-          
-          <div class="article-body">
-            <p class="article-intro">
-              Cloud computing represents the infrastructure of tomorrow. 
-            </p>
-            
-            <div class="article-points">
-              <div class="article-point">
-                <h4>Scalability & Accessibility</h4>
-                <p>The cloud democratizes powerful computing. Small projects can scale globally, and innovations can reach users anywhere instantly.</p>
-              </div>
-              
-              <div class="article-point">
-                <h4>Security in the Cloud</h4>
-                <p>Cloud security is a shared responsibility. Understanding this model is crucial for building applications that are both powerful and protected.</p>
-              </div>
-              
-              <div class="article-point">
-                <h4>What's Next</h4>
-                <p>Beyond traditional cloud: serverless architectures, edge computing, and how these technologies will shape the next generation of applications.</p>
+          <!-- 3. Wangwana Airbnb Platform -->
+          <article class="project-card" data-category="web" id="proj-wangwana">
+            <div class="project-card-thumb">
+              <img src="assets/images/wangwana.png" alt="Wangwana Airbnb Platform" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Wangwana Airbnb Platform</h3>
+              <p class="project-card-desc">
+                A vacation accommodation and apartment booking platform tailored for guests visiting Kisumu city.
+              </p>
+              <div class="project-card-tech">HTML5 · CSS3 · JavaScript</div>
+              <div class="project-card-links">
+                <a href="https://bblasio.github.io/web-development-week-8-Assignment-/" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-box-arrow-up-right"></i> Live Demo
+                </a>
+                <a href="https://github.com/Bblasio/web-development-week-8-Assignment-.git" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
               </div>
             </div>
-            
-            <div class="article-tags">
-              <span class="article-tag">Cloud Architecture</span>
-              <span class="article-tag">Serverless</span>
-              <span class="article-tag">Edge Computing</span>
-              <span class="article-tag">DevOps</span>
-            </div>
-          </div>
-        </div>
-      </article>
+          </article>
 
+          <!-- 4. Iris Classification App -->
+          <article class="project-card" data-category="ml" id="proj-iris">
+            <div class="project-card-thumb">
+              <img src="assets/images/irishapp.png" alt="Iris Classification App" loading="lazy">
             </div>
-    </div>
-  </div>
-</section>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Iris Classification App</h3>
+              <p class="project-card-desc">
+                Interactive classifier employing decision boundaries and morphological feature inputs to categorize botanical species.
+              </p>
+              <div class="project-card-tech">Python · Streamlit · Scikit-Learn</div>
+              <div class="project-card-links">
+                <a href="https://classicalml.streamlit.app/" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-box-arrow-up-right"></i> Live Demo
+                </a>
+                <a href="https://github.com/Bblasio/AI_Tools.git" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
 
-  <section id="contact" class="contact-section">
-    <h2>Get In <span class="highlight">Touch</span></h2>
-    <p class="subtitle">Ready to work together? Let's connect!</p>
-    <div class="line"></div>
-    <div class="contact-wrapper animate-section">
-      <!-- Contact Form -->
-      <div class="contact-message card">
-        <h3>Send me a message</h3>
-        <form id="contact-form" action="https://formspree.io/f/mzzaaogg" method="POST">
-          <label>Name</label>
-          <input type="text" id="name" name="name" placeholder="Your full name" required>
-          
-          <label>Email</label>
-          <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
-          
-          <label>Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
-          
-          <label>Message</label>
-          <textarea rows="4" id="message" name="message" placeholder="Tell me about your project or just say hello!" required></textarea>
-          
-          <button type="submit" style="background-color: #9b5de5; border: none; width:100%; color: white; border-radius: 6px;">
-            Send Message
-          </button>
-          <p id="form-message"></p>
-        </form>
-      </div>
-      <div class="contact-info card">
-        <h3>Contact Information</h3>
-        <div class="info-item">
-          <span class="icon-circle">
-            <img src="assets/images/mail.png" alt="Email Icon" class="contact-icon" />
-          </span>
-          <strong>odhisblasio@gmail.com</strong>
-        </div>
-        <div class="info-item">
-          <span class="icon-circle">
-            <img src="assets/images/call.png" alt="Phone Icon" class="contact-icon" />
-          </span>
-          <strong>+254 703165843</strong>
-        </div>
-        <div class="info-item">
-          <span class="icon-circle">
-            <img src="assets/images/pin.png" alt="Location Icon" class="contact-icon" />
-          </span>
-          <strong>Kisumu, Kenya</strong>
-        </div>
-        <div class="connect">
-          <h3>Connect with me</h3>
-          <div class="icons">
-            <a href="https://github.com/Bblasio" class="icon-link" target="_blank">
-              <img src="assets/images/github.png" alt="GitHub" class="contact-icon" />
-            </a>
-            <a href="https://www.linkedin.com/in/blasioodhiambo" class="icon-link" target="_blank">
-              <img src="assets/images/linkedin.png" alt="LinkedIn" class="contact-icon" />
-            </a>
-          </div>
+          <!-- 5. MNIST Digit Recognizer -->
+          <article class="project-card" data-category="ml" id="proj-mnist">
+            <div class="project-card-thumb">
+              <img src="assets/images/MNIST.png" alt="MNIST Digit Recognizer" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">MNIST Digit Recognizer</h3>
+              <p class="project-card-desc">
+                Convolutional neural network for recognizing handwritten digits from interactive canvas sketch inputs.
+              </p>
+              <div class="project-card-tech">Python · TensorFlow · Streamlit</div>
+              <div class="project-card-links">
+                <a href="https://cnnmodeldl.streamlit.app/" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-box-arrow-up-right"></i> Live Demo
+                </a>
+                <a href="https://github.com/Bblasio/AI_Tools.git" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Leave Application App -->
+          <article class="project-card" data-category="web" id="proj-leave">
+            <div class="project-card-thumb">
+              <img src="assets/images/leaveapp.png" alt="Leave Application App" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Leave Application System</h3>
+              <p class="project-card-desc">
+                A digital workforce workflow app replacing paper leave submissions with digital approvals and audit logging.
+              </p>
+              <div class="project-card-tech">Java · Android · SQLite</div>
+              <div class="project-card-links">
+                <a href="https://github.com/Bblasio/KISUMULAWCOURTLEAVESYSTEM.git" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Personal Portfolio Website -->
+          <article class="project-card" data-category="web" id="proj-portfolio">
+            <div class="project-card-thumb">
+              <img src="assets/images/portfolio.png" alt="Personal Portfolio Website" loading="lazy">
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-card-title">Personal Portfolio Website</h3>
+              <p class="project-card-desc">
+                Responsive, accessible personal website engineered with semantic HTML5, modern CSS architecture, and vanilla JavaScript.
+              </p>
+              <div class="project-card-tech">HTML5 · CSS3 · JavaScript</div>
+              <div class="project-card-links">
+                <a href="https://blasio.netlify.app/" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-box-arrow-up-right"></i> Live Demo
+                </a>
+                <a href="https://github.com/Bblasio/My-Portfolio.git" class="project-link-btn" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <p>&copy; 2026 Blasio Odhiambo. All rights reserved.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="contact section light-background">
+      <div class="container section-title">
+        <h2>Contact</h2>
+        <p>Get in touch for enterprise opportunities, solution architecture inquiries, or technical collaborations.</p>
+      </div>
+
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Info Details Card -->
+          <div class="contact-info-card">
+            <h3>Contact Information</h3>
+
+            <div class="info-item">
+              <i class="bi bi-geo-alt"></i>
+              <div>
+                <h4>Location</h4>
+                <p>Nairobi, Kenya</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="bi bi-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:odhisblasio@gmail.com">odhisblasio@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="bi bi-telephone"></i>
+              <div>
+                <h4>Phone</h4>
+                <p><a href="tel:+254703165843">+254 703165843</a></p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <i class="bi bi-globe"></i>
+              <div>
+                <h4>Portfolio</h4>
+                <p><a href="https://blasio.netlify.app/" target="_blank" rel="noopener noreferrer">blasio.netlify.app</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Card -->
+          <div class="contact-form-card">
+            <h3>Send a Message</h3>
+
+            <form id="contact-form" action="https://formspree.io/f/mzzaaogg" method="POST">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Project Inquiry / Job Opportunity" required>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-custom btn-accent" id="contact-submit-btn" style="width: 100%; justify-content: center;">
+                <span>Send Message</span>
+                <i class="bi bi-send"></i>
+              </button>
+              <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>&copy; 2026 <strong>Blasio Odhiambo</strong>. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#hero">Back to Top</a>
+          <a href="https://github.com/Bblasio" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/blasioodhiambo" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.credly.com/users/blasio-odhiambo" target="_blank" rel="noopener noreferrer">Credly</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <script src="scripts.js"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-  </script>
+  <!-- Scroll Top Button -->
+  <button type="button" id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up-short" style="font-size: 26px;"></i>
+  </button>
+
+  <!-- Main JavaScript File -->
+  <script src="js/script.js"></script>
 </body>
+
 </html>

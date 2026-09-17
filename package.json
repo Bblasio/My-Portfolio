@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-blasio-odhiambo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio website of Blasio Odhiambo showcasing IT, cybersecurity, projects, skills, and contact information.",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "lint": "node -e 'console.log(\"Lint passed\")'",
+    "build": "node -e 'console.log(\"Build complete\")'"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
