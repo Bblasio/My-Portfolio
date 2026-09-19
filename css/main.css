@@ -8,9 +8,9 @@
 # Font & Color Variables
 --------------------------------------------------------------*/
 :root {
-  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway", sans-serif;
-  --nav-font: "Poppins", sans-serif;
+  --default-font: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Space Grotesk", sans-serif;
+  --nav-font: "Space Grotesk", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Global Colors (Charcoal black, Dark gray, Off-white, Soft mint green) */
@@ -32,26 +32,6 @@
   --nav-mobile-background-color: #181818;
 
   --bg-card: #1E1E1E;
-}
-
-/* Light Theme Preset */
-body.light-theme {
-  --background-color: #ffffff;
-  --default-color: #272829;
-  --heading-color: #050d18;
-  --accent-color: #149ddd;
-  --accent-color-hover: #0c7eb2;
-  --surface-color: #f4fafd;
-  --contrast-color: #ffffff;
-
-  --nav-color: #4b5563;
-  --nav-hover-color: #050d18;
-  --nav-mobile-background-color: #ffffff;
-
-  --border-muted: #d1d5db;
-  --border-muted-hover: #9ca3af;
-  --bg-secondary: #f0f5fa;
-  --bg-card: #ffffff;
 }
 
 /* Smooth scroll */
@@ -189,10 +169,6 @@ section, .section {
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid var(--border-muted);
-}
-
-body.light-theme .header .profile-img img {
-  border-color: #d1d5db;
 }
 
 .header .logo {
@@ -622,11 +598,6 @@ body.light-theme .header .profile-img img {
   box-shadow: none;
 }
 
-body.light-theme .about-card {
-  border-color: #d1d5db;
-  box-shadow: none;
-}
-
 .about-card p {
   font-size: 1rem;
   line-height: 1.7;
@@ -818,6 +789,12 @@ body.light-theme .about-card {
   fill: currentColor;
 }
 
+.tech-icon-box img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
 .tech-icon-name {
   font-size: 0.78rem;
   font-weight: 600;
@@ -841,6 +818,10 @@ body.light-theme .about-card {
     width: 22px;
     height: 22px;
   }
+  .tech-icon-box img {
+    width: 22px;
+    height: 22px;
+  }
   .tech-icon-name {
     font-size: 0.72rem;
   }
@@ -858,7 +839,7 @@ body.light-theme .about-card {
   background-color: var(--surface-color);
   border: 1px solid var(--border-muted);
   border-radius: 12px;
-  padding: 22px;
+  overflow: hidden;
   box-shadow: none;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
@@ -868,13 +849,32 @@ body.light-theme .about-card {
   transform: translateY(-2px);
 }
 
+.skill-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-muted);
+}
+
+.skill-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.skill-category-card:hover .skill-card-image img {
+  transform: scale(1.04);
+}
+
 .category-title {
   font-size: 1rem;
   font-weight: 700;
   color: var(--heading-color);
-  margin-bottom: 16px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border-muted);
+  margin: 0;
+  padding: 16px 18px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -971,16 +971,6 @@ body.light-theme .about-card {
 .experience-card:hover {
   border-color: var(--border-muted-hover);
   transform: translateY(-2px);
-  box-shadow: none;
-}
-
-body.light-theme .experience-card {
-  border-color: #d1d5db;
-  box-shadow: none;
-}
-
-body.light-theme .experience-card:hover {
-  border-color: #9ca3af;
   box-shadow: none;
 }
 
@@ -1139,25 +1129,11 @@ body.light-theme .experience-card:hover {
   box-shadow: none;
 }
 
-body.light-theme .project-card {
-  border-color: #d1d5db;
-  box-shadow: none;
-}
-
-body.light-theme .project-card:hover {
-  border-color: #9ca3af;
-  box-shadow: none;
-}
-
 .project-card-thumb {
   height: 170px;
   background-color: var(--bg-secondary);
   overflow: hidden;
   border-bottom: 1px solid var(--border-muted);
-}
-
-body.light-theme .project-card-thumb {
-  border-bottom-color: #d1d5db;
 }
 
 .project-card-thumb img {
@@ -1417,4 +1393,3 @@ body.light-theme .project-card-thumb {
   visibility: visible;
   opacity: 1;
 }
-
