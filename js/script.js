@@ -3,17 +3,34 @@
  * Complete JavaScript for iPortfolio layout:
  * - Mobile sidebar drawer toggle
  * - Active nav scrollspy
+ * - Lively smooth section transitions & scroll progress
+ * - Responsive content flow system (IntersectionObserver with cascading reveals)
  * - Typing effect for Hero
- * - Portfolio category filters
+ * - Lively animated portfolio category filters & dynamic counter
  * - Scroll-to-top button
  * - Theme switcher
  * - Contact form handler (Formspree)
+ * - Low-resolution blur-up lazy loading
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // -------------------------------------------------------------
-  // 1. Mobile Sidebar Toggle
+  // 1. Scroll Progress Bar
+  // -------------------------------------------------------------
+  const scrollProgress = document.getElementById('scroll-progress');
+  function updateScrollProgress() {
+    if (!scrollProgress) return;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = `${progress}%`;
+  }
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  updateScrollProgress();
+
+  // -------------------------------------------------------------
+  // 2. Mobile Sidebar Toggle
   // -------------------------------------------------------------
   const headerToggleBtn = document.getElementById('header-toggle');
   const headerToggleIcon = document.getElementById('header-toggle-icon');
@@ -33,20 +50,99 @@ document.addEventListener('DOMContentLoaded', () => {
     headerToggleBtn.addEventListener('click', toggleMobileHeader);
   }
 
-  // Close sidebar on navigation click (mobile)
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
+  // -------------------------------------------------------------
+  // 3. Lively Page Navigation & Smooth Section Transitions
+  // -------------------------------------------------------------
+  const allAnchorLinks = document.querySelectorAll('a[href^="#"]');
+
+  allAnchorLinks.forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const targetId = anchor.getAttribute('href');
+      if (!targetId || targetId === '#' || !targetId.startsWith('#')) return;
+
+      const targetEl = document.querySelector(targetId);
+      if (!targetEl) return;
+
+      e.preventDefault();
+
+      // Close mobile drawer smoothly if open
       if (header && header.classList.contains('header-show')) {
         header.classList.remove('header-show');
         if (headerToggleIcon) {
           headerToggleIcon.className = 'bi bi-list';
         }
       }
+
+      // Calculate header offset for mobile vs desktop
+      const headerOffset = window.innerWidth < 1200 ? 60 : 0;
+      const elementPosition = targetEl.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Update URL hash cleanly
+      if (window.history.pushState) {
+        window.history.pushState(null, '', targetId);
+      }
+
+      // Trigger lively section pulse & responsive cascade on arrival
+      targetEl.classList.remove('section-nav-pulse');
+      void targetEl.offsetWidth; // trigger reflow
+      targetEl.classList.add('section-nav-pulse');
+
+      // Re-trigger lively staggered reveal for destination elements
+      const childReveals = targetEl.querySelectorAll('.flow-reveal');
+      childReveals.forEach((el, idx) => {
+        el.classList.remove('is-revealed');
+        setTimeout(() => {
+          el.classList.add('is-revealed');
+        }, 40 + idx * 40);
+      });
     });
   });
 
   // -------------------------------------------------------------
-  // 2. Typing Effect in Hero
+  // 4. Responsive Content Flow System (Staggered Reveals on Scroll)
+  // -------------------------------------------------------------
+  const flowTargets = document.querySelectorAll(
+    '.section-title, .hero-card, .about-img-box, .about-narrative-content, .focus-areas-grid > div, .tools-showcase-wrap, .skill-category-card, .resume-item, .edu-card, .cert-card, .portfolio-controls-bar, .project-card, .info-item, .contact-form-card'
+  );
+
+  flowTargets.forEach(el => {
+    el.classList.add('flow-reveal');
+  });
+
+  // Assign responsive flow stagger delays per section
+  const sectionContainers = document.querySelectorAll('section');
+  sectionContainers.forEach(sec => {
+    const items = sec.querySelectorAll('.flow-reveal');
+    items.forEach((item, idx) => {
+      const delayNum = Math.min((idx % 6) + 1, 7);
+      item.classList.add(`flow-delay-${delayNum}`);
+    });
+  });
+
+  const flowObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  flowTargets.forEach(el => {
+    flowObserver.observe(el);
+  });
+
+  // -------------------------------------------------------------
+  // 5. Typing Effect in Hero
   // -------------------------------------------------------------
   const typedTarget = document.getElementById('typed-text');
   if (typedTarget) {
@@ -91,11 +187,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------
-  // 3. ScrollSpy: Active Nav link on scroll
+  // 6. ScrollSpy: Active Nav link on scroll
   // -------------------------------------------------------------
   const sections = document.querySelectorAll('section[id]');
   function updateScrollSpy() {
-    const scrollPos = window.scrollY + 120;
+    const scrollPos = window.scrollY + 140;
 
     sections.forEach(section => {
       const top = section.offsetTop;
@@ -114,12 +210,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   window.addEventListener('scroll', updateScrollSpy, { passive: true });
+  updateScrollSpy();
 
   // -------------------------------------------------------------
-  // 4. Portfolio Filters
+  // 7. Portfolio Filters & Dynamic Project Counter with Lively Animations
   // -------------------------------------------------------------
   const filterButtons = document.querySelectorAll('#portfolio-filters button');
-  const projectCards = document.querySelectorAll('.project-card');
+  const projectCards = document.querySelectorAll('.projects-grid .project-card');
+  const countVisibleEl = document.getElementById('portfolio-count-visible');
+  const countTotalEl = document.getElementById('portfolio-count-total');
+
+  function updateProjectCounter() {
+    if (!projectCards.length) return;
+    let visibleCount = 0;
+    projectCards.forEach(card => {
+      if (!card.classList.contains('filter-collapsed') && window.getComputedStyle(card).display !== 'none') {
+        visibleCount++;
+      }
+    });
+
+    if (countVisibleEl) {
+      countVisibleEl.style.transform = 'scale(1.28)';
+      countVisibleEl.textContent = visibleCount;
+      setTimeout(() => {
+        countVisibleEl.style.transform = 'scale(1)';
+      }, 180);
+    }
+    if (countTotalEl) {
+      countTotalEl.textContent = projectCards.length;
+    }
+  }
+
+  // Initialize total count on start
+  if (countTotalEl) {
+    countTotalEl.textContent = projectCards.length;
+  }
+  updateProjectCounter();
 
   if (filterButtons.length && projectCards.length) {
     filterButtons.forEach(btn => {
@@ -129,20 +255,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const filterValue = btn.getAttribute('data-filter');
 
-        projectCards.forEach(card => {
+        projectCards.forEach((card, idx) => {
           const category = card.getAttribute('data-category');
-          if (filterValue === 'all' || category === filterValue) {
-            card.style.display = 'flex';
+          const matches = filterValue === 'all' || category === filterValue;
+
+          if (matches) {
+            card.classList.remove('filter-collapsed');
+            card.classList.remove('filter-hide');
+            setTimeout(() => {
+              card.classList.add('filter-show');
+            }, 25 + (idx % 4) * 35);
           } else {
-            card.style.display = 'none';
+            card.classList.remove('filter-show');
+            card.classList.add('filter-hide');
+            setTimeout(() => {
+              if (card.classList.contains('filter-hide')) {
+                card.classList.add('filter-collapsed');
+                updateProjectCounter();
+              }
+            }, 260);
           }
         });
+
+        setTimeout(updateProjectCounter, 280);
       });
     });
   }
 
   // -------------------------------------------------------------
-  // 5. Scroll Top Button
+  // 8. Scroll Top Button
   // -------------------------------------------------------------
   const scrollTopBtn = document.getElementById('scroll-top');
   if (scrollTopBtn) {
@@ -163,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------
-  // 6. Theme Switcher (Dark default, Light optional)
+  // 9. Theme Switcher (Dark default, Light optional)
   // -------------------------------------------------------------
   const themeToggle = document.getElementById('theme-toggle');
   const themeIcon = document.getElementById('theme-icon');
@@ -196,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------
-  // 7. Contact Form Handler (Formspree)
+  // 10. Contact Form Handler (Formspree)
   // -------------------------------------------------------------
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
@@ -267,12 +408,37 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!formStatus) return;
     formStatus.textContent = msg;
     if (type === 'success') {
-      formStatus.style.color = '#10b981';
+      formStatus.style.color = '#FFFFFF';
     } else if (type === 'error') {
       formStatus.style.color = '#ef4444';
     } else {
       formStatus.style.color = 'var(--default-color)';
     }
   }
+
+  // -------------------------------------------------------------
+  // 11. Low-Resolution Blur-Up Lazy Loading System
+  // -------------------------------------------------------------
+  const lazyImages = document.querySelectorAll('img.lazy-blur, .hero-bg-img.lazy-blur');
+
+  function markImageLoaded(img) {
+    img.classList.add('is-loaded');
+    const parentThumb = img.closest('.project-card-thumb, .skill-card-image, .about-img-box');
+    if (parentThumb) {
+      parentThumb.classList.add('is-ready');
+    }
+  }
+
+  lazyImages.forEach(img => {
+    // If image is already cached or complete
+    if (img.complete && img.naturalWidth > 0) {
+      setTimeout(() => markImageLoaded(img), 60);
+    } else {
+      img.addEventListener('load', () => markImageLoaded(img), { once: true });
+      img.addEventListener('error', () => {
+        markImageLoaded(img);
+      }, { once: true });
+    }
+  });
 
 });
