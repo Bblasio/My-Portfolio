@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Trigger lively section pulse & responsive cascade on arrival
       targetEl.classList.remove('section-nav-pulse');
+      targetEl.classList.add('section-in-view');
       void targetEl.offsetWidth; // trigger reflow
       targetEl.classList.add('section-nav-pulse');
 
@@ -105,10 +106,34 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // -------------------------------------------------------------
-  // 4. Responsive Content Flow System (Staggered Reveals on Scroll)
+  // 4. Section Fade-In Animation via Intersection Observer
+  // -------------------------------------------------------------
+  const scrollSections = document.querySelectorAll('section:not(#hero)');
+  scrollSections.forEach(sec => {
+    sec.classList.add('section-fade');
+  });
+
+  const sectionObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('section-in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  scrollSections.forEach(sec => {
+    sectionObserver.observe(sec);
+  });
+
+  // -------------------------------------------------------------
+  // 4b. Responsive Content Flow System (Staggered Reveals on Scroll)
   // -------------------------------------------------------------
   const flowTargets = document.querySelectorAll(
-    '.section-title, .hero-card, .about-img-box, .about-narrative-content, .focus-areas-grid > div, .tools-showcase-wrap, .skill-category-card, .resume-item, .edu-card, .cert-card, .portfolio-controls-bar, .project-card, .info-item, .contact-form-card'
+    '.section-title, .about-img-box, .about-narrative-content, .focus-areas-grid > div, .tools-showcase-wrap, .skill-category-card, .resume-item, .edu-card, .cert-card, .portfolio-controls-bar, .project-card, .info-item, .contact-form-card'
   );
 
   flowTargets.forEach(el => {
@@ -142,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // -------------------------------------------------------------
-  // 5. Typing Effect in Hero
+  // 5. Typing Effect in Hero (Taking turns in 2 seconds)
   // -------------------------------------------------------------
   const typedTarget = document.getElementById('typed-text');
   if (typedTarget) {
@@ -154,9 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
-    const typeSpeed = 90;
-    const deleteSpeed = 40;
-    const holdTime = 1800;
+    const typeSpeed = 75;
+    const deleteSpeed = 35;
+    const holdTime = 2000; // 2 seconds hold time
 
     function typeLoop() {
       const currentRole = roles[roleIndex];
@@ -172,18 +197,18 @@ document.addEventListener('DOMContentLoaded', () => {
       let speed = isDeleting ? deleteSpeed : typeSpeed;
 
       if (!isDeleting && charIndex === currentRole.length) {
-        speed = holdTime;
+        speed = holdTime; // 2 seconds hold
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
-        speed = 400;
+        speed = 320; // Brief pause before typing next title
       }
 
       setTimeout(typeLoop, speed);
     }
 
-    typeLoop();
+    setTimeout(typeLoop, 250);
   }
 
   // -------------------------------------------------------------

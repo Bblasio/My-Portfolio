@@ -124,6 +124,30 @@ section, .section {
   position: relative;
 }
 
+/*--------------------------------------------------------------
+# Section Scroll-Triggered Fade-In Animation
+--------------------------------------------------------------*/
+section.section-fade {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+section.section-fade.section-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  section.section-fade {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 .section-title h2 {
   font-size: 32px;
   font-weight: 700;
@@ -406,17 +430,17 @@ section, .section {
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  opacity: 0.42;
-  filter: brightness(0.92) contrast(1.08);
+  opacity: 0.72;
+  filter: brightness(0.96) contrast(1.06);
 }
 
 .hero::before {
   content: "";
   background: linear-gradient(
     180deg,
-    rgba(20, 20, 20, 0.58) 0%,
-    rgba(20, 20, 20, 0.78) 60%,
-    rgba(24, 24, 24, 0.94) 100%
+    rgba(18, 18, 18, 0.38) 0%,
+    rgba(20, 20, 20, 0.58) 55%,
+    rgba(24, 24, 24, 0.88) 100%
   );
   position: absolute;
   inset: 0;
@@ -438,28 +462,51 @@ section, .section {
 }
 
 .hero-role-title {
-  margin: 14px 0 0 0;
-  font-size: 22px;
+  margin: 16px 0 0 0;
+  font-size: 28px;
   font-weight: 600;
   color: var(--heading-color);
   font-family: var(--heading-font);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  min-height: 44px;
 }
 
-.hero-role-title .role-separator {
-  color: var(--accent-color);
-  opacity: 0.7;
+.hero-role-title .typed-text {
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+  padding-bottom: 2px;
+}
+
+.hero-role-title .typed-cursor {
+  display: inline-block;
+  color: #FFFFFF;
   font-weight: 300;
+  margin-left: 3px;
+  font-size: 1.1em;
+  animation: typedBlink 0.9s infinite;
+  user-select: none;
+}
+
+@keyframes typedBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .hero-role-title {
+    font-size: 22px;
+    min-height: 36px;
+  }
 }
 
 .hero-subtext {
   max-width: 660px;
   font-size: 1.05rem;
   color: var(--default-color);
-  margin: 18px 0 26px 0;
+  margin: 20px 0 28px 0;
   line-height: 1.65;
 }
 
@@ -468,62 +515,7 @@ section, .section {
   align-items: center;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 40px;
-}
-
-/* Three Professional Cards Under Hero */
-.hero-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 18px;
-  margin-top: 20px;
-}
-
-.hero-card {
-  background-color: var(--surface-color);
-  border: 1px solid var(--border-muted);
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: none;
-  transition: border-color 0.25s ease, transform 0.25s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-card:hover {
-  border-color: var(--border-muted-hover);
-  transform: translateY(-3px);
-}
-
-.hero-card-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-}
-
-.hero-card-icon i {
-  color: var(--accent-color);
-  font-size: 1.25rem;
-}
-
-.hero-card h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--heading-color);
-  margin-bottom: 8px;
-}
-
-.hero-card p {
-  font-size: 0.9rem;
-  color: var(--default-color);
-  line-height: 1.55;
-  margin: 0;
+  margin-bottom: 0;
 }
 
 /* Button Styles */
@@ -1166,7 +1158,7 @@ section, .section {
   gap: 22px;
 }
 
-/* Project Card Class: 12px radius, 1px solid var(--border-muted), NO box-shadow */
+/* Project Card: Smooth scaling animation and subtle drop-shadow effect on hover */
 .project-card {
   background-color: var(--surface-color);
   border: 1px solid var(--border-muted);
@@ -1174,17 +1166,19 @@ section, .section {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: none;
-  transition: border-color 0.2s ease,
-              transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  transition: border-color 0.25s ease,
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
               opacity 0.28s ease,
               filter 0.28s ease;
+  will-change: transform, box-shadow;
 }
 
 .project-card:hover {
-  border-color: var(--border-muted-hover);
-  transform: translateY(-3px);
-  box-shadow: none;
+  border-color: #555555;
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .project-card.filter-hide {
@@ -1254,7 +1248,7 @@ section, .section {
 .hero .hero-bg-img.lazy-blur.is-loaded {
   filter: blur(0px);
   transform: scale(1);
-  opacity: 0.42;
+  opacity: 0.72;
 }
 
 /* Skeleton shimmer placeholder for thumb containers */
